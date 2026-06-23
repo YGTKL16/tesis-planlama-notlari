@@ -3,6 +3,8 @@ site_description: Tesis Planlama ders notları ve deneme sınavları
 site_url: https://yigitkl16.github.io/tesis-planlama-notlari/
 repo_url: https://github.com/yigitkl16/tesis-planlama-notlari
 repo_name: tesis-planlama-notlari
+docs_dir: src
+site_dir: docs
 
 theme:
   name: material
