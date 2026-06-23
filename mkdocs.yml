@@ -1,0 +1,74 @@
+site_name: Tesis Planlama Ders Notları
+site_description: Tesis Planlama ders notları ve deneme sınavları
+site_url: https://yigitkl16.github.io/tesis-planlama-notlari/
+repo_url: https://github.com/yigitkl16/tesis-planlama-notlari
+repo_name: tesis-planlama-notlari
+
+theme:
+  name: material
+  language: tr
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Karanlık moda geç
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Aydınlık moda geç
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Ana Sayfa: index.md
+  - Ders Notları:
+    - "HF01 - Giriş ve Ürün, Süreç, Çizelgeleme Tasarımı I": ders-notlari/hf01.md
+    - "HF02 - Tesis Kapasite Planlama": ders-notlari/hf02.md
+    - "HF03 - Ürün, Süreç ve Çizelgeleme Tasarımı II": ders-notlari/hf03.md
+    - "HF04 - Ürün, Süreç ve Çizelgeleme Tasarımı III": ders-notlari/hf04.md
+    - "HF05 - Akış, Alan ve Etkinlik İlişkileri I": ders-notlari/hf05.md
+    - "HF06 - Akış, Alan ve Etkinlik İlişkileri II": ders-notlari/hf06.md
+    - "HF07 - Yerleşim Tasarımı I": ders-notlari/hf07.md
+    - "HF08 - Yerleşim Tasarımı II": ders-notlari/hf08.md
+    - "HF09 - Yerleşim Tasarımı III": ders-notlari/hf09.md
+    - "HF10 - Yerleşim Tasarımı IV": ders-notlari/hf10.md
+    - "HF11 - Tesis Konumu I": ders-notlari/hf11.md
+    - "HF12 - Tesis Konumu II": ders-notlari/hf12.md
+  - Denemeler:
+    - "Deneme 01 - Hesap Odaklı": denemeler/deneme01.md
+    - "Deneme 02 - Adım Adım Çözümlü Tam Sınav": denemeler/deneme02.md
