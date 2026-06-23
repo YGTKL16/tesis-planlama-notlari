@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Tesis Planlama — Ders Notları</title>
+      <link>https://ygtkl16.github.io/tesis-planlama-notlari</link>
+      <description>Son 10 not on Tesis Planlama — Ders Notları</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>HF11 - Tesis Konumu I</title>
+    <link>https://ygtkl16.github.io/tesis-planlama-notlari/01-Ders-Notlar%C4%B1/HF11---Tesis-Konumu-I</link>
+    <guid>https://ygtkl16.github.io/tesis-planlama-notlari/01-Ders-Notlar%C4%B1/HF11---Tesis-Konumu-I</guid>
+    <description><![CDATA[ HF11 - Tesis Konumu I Ana fikir Sürekli konum problemleri, yeni tesisin düzlemde sonsuz olası nokta arasından herhangi bir (x,y) koordinatına yerleşebildiğini varsayar; tek ve özel karar etmeni taşıma/nakliye maliyetidir. ]]></description>
+    <pubDate>Tue, 23 Jun 2026 20:13:04 GMT</pubDate>
+  </item><item>
+    <title>HF12 - Tesis Konumu II</title>
+    <link>https://ygtkl16.github.io/tesis-planlama-notlari/01-Ders-Notlar%C4%B1/HF12---Tesis-Konumu-II</link>
+    <guid>https://ygtkl16.github.io/tesis-planlama-notlari/01-Ders-Notlar%C4%B1/HF12---Tesis-Konumu-II</guid>
+    <description><![CDATA[ HF12 - Tesis Konumu II Ana fikir Kesikli (ayrık) tesis konum probleminde aday yerler önceden bellidir; karar, hangi tesislerin açılacağı (y_i) ve her müşterinin hangi açık tesise atanacağıdır (x_{ij}). ]]></description>
+    <pubDate>Tue, 23 Jun 2026 20:12:32 GMT</pubDate>
+  </item><item>
+    <title>HF02 - Tesis Kapasite Planlama</title>
+    <link>https://ygtkl16.github.io/tesis-planlama-notlari/01-Ders-Notlar%C4%B1/HF02---Tesis-Kapasite-Planlama</link>
+    <guid>https://ygtkl16.github.io/tesis-planlama-notlari/01-Ders-Notlar%C4%B1/HF02---Tesis-Kapasite-Planlama</guid>
+    <description><![CDATA[ HF02 - Tesis Kapasite Planlama Bir cümlede Kapasite planlaması, talebin ne zaman, nerede ve ne kadar karşılanacağını belirler; çok az kapasite satış/hizmet kaybına, fazla kapasite ise atıl yatırıma ve yüksek sabit maliyete yol açtığı için başa baş analizi ve dinamik büyüme modelleriyle bu denge opti... ]]></description>
+    <pubDate>Tue, 23 Jun 2026 20:10:55 GMT</pubDate>
+  </item><item>
+    <title>HF07 - Yerleşim Tasarımı I</title>
+    <link>https://ygtkl16.github.io/tesis-planlama-notlari/01-Ders-Notlar%C4%B1/HF07---Yerle%C5%9Fim-Tasar%C4%B1m%C4%B1-I</link>
+    <guid>https://ygtkl16.github.io/tesis-planlama-notlari/01-Ders-Notlar%C4%B1/HF07---Yerle%C5%9Fim-Tasar%C4%B1m%C4%B1-I</guid>
+    <description><![CDATA[ HF07 - Yerleşim Tasarımı I Ana fikir Yerleşim tasarımı; işgücü, malzeme, makine ve ekipman gibi fiziksel kaynakları kapasite, maliyet, akış, güvenlik ve ergonomi hedeflerini sağlayacak şekilde alana yerleştirir. ]]></description>
+    <pubDate>Tue, 23 Jun 2026 20:10:55 GMT</pubDate>
+  </item><item>
+    <title>HF03 - Ürün, Süreç ve Çizelgeleme Tasarımı II</title>
+    <link>https://ygtkl16.github.io/tesis-planlama-notlari/01-Ders-Notlar%C4%B1/HF03---%C3%9Cr%C3%BCn,-S%C3%BCre%C3%A7-ve-%C3%87izelgeleme-Tasar%C4%B1m%C4%B1-II</link>
+    <guid>https://ygtkl16.github.io/tesis-planlama-notlari/01-Ders-Notlar%C4%B1/HF03---%C3%9Cr%C3%BCn,-S%C3%BCre%C3%A7-ve-%C3%87izelgeleme-Tasar%C4%B1m%C4%B1-II</guid>
+    <description><![CDATA[ HF03 - Ürün, Süreç ve Çizelgeleme Tasarımı II Ana fikir Süreç tasarımı ürünün hangi işlemlerle, hangi sırada ve hangi kaynaklarla üretileceğini tanımlar; çizelge tasarımı bu yapıyı talep miktarına dönüştürür ve düşük hacimli üretimde ıskartanın rassal olduğu durumlarda kaç adet üretileceği binom dağ... ]]></description>
+    <pubDate>Tue, 23 Jun 2026 20:10:55 GMT</pubDate>
+  </item><item>
+    <title>Görsel Atlas</title>
+    <link>https://ygtkl16.github.io/tesis-planlama-notlari/07-Ekler/Diyagramlar/G%C3%B6rsel-Atlas</link>
+    <guid>https://ygtkl16.github.io/tesis-planlama-notlari/07-Ekler/Diyagramlar/G%C3%B6rsel-Atlas</guid>
+    <description><![CDATA[ Görsel Atlas Info Mermaid diyagramları Obsidian içinde canlıdır. TikZ kaynakları 07 Ekler/TikZ Kaynakları, derlenmiş SVG’ler bu klasördedir. ]]></description>
+    <pubDate>Tue, 23 Jun 2026 19:56:40 GMT</pubDate>
+  </item><item>
+    <title>Hesap Öğrenme Paketi Şablonu</title>
+    <link>https://ygtkl16.github.io/tesis-planlama-notlari/06-%C5%9Eablonlar/Hesap-%C3%96%C4%9Frenme-Paketi-%C5%9Eablonu</link>
+    <guid>https://ygtkl16.github.io/tesis-planlama-notlari/06-%C5%9Eablonlar/Hesap-%C3%96%C4%9Frenme-Paketi-%C5%9Eablonu</guid>
+    <description><![CDATA[ {{başlık}} Şablonun kullanımı Bu bir hesap (sayısal) öğrenme paketi iskeletidir. ]]></description>
+    <pubDate>Tue, 23 Jun 2026 19:56:02 GMT</pubDate>
+  </item><item>
+    <title>Kavram Dizini</title>
+    <link>https://ygtkl16.github.io/tesis-planlama-notlari/02-Kavramlar/Kavram-Dizini</link>
+    <guid>https://ygtkl16.github.io/tesis-planlama-notlari/02-Kavramlar/Kavram-Dizini</guid>
+    <description><![CDATA[ Kavram Dizini Info Dersin tüm kavramları sekiz bölümde toplanmıştır. ]]></description>
+    <pubDate>Tue, 23 Jun 2026 19:55:16 GMT</pubDate>
+  </item><item>
+    <title>HF09 - Yerleşim Tasarımı III</title>
+    <link>https://ygtkl16.github.io/tesis-planlama-notlari/01-Ders-Notlar%C4%B1/HF09---Yerle%C5%9Fim-Tasar%C4%B1m%C4%B1-III</link>
+    <guid>https://ygtkl16.github.io/tesis-planlama-notlari/01-Ders-Notlar%C4%B1/HF09---Yerle%C5%9Fim-Tasar%C4%B1m%C4%B1-III</guid>
+    <description><![CDATA[ HF09 - Yerleşim Tasarımı III Ana fikir MCRAFT, BLOCPLAN ve LOGIC, blok yerleşimini farklı veri ve geometri varsayımlarıyla üretip iyileştirir. ]]></description>
+    <pubDate>Tue, 23 Jun 2026 19:52:03 GMT</pubDate>
+  </item><item>
+    <title>HF05 - Akış, Alan ve Etkinlik İlişkileri I</title>
+    <link>https://ygtkl16.github.io/tesis-planlama-notlari/01-Ders-Notlar%C4%B1/HF05---Ak%C4%B1%C5%9F,-Alan-ve-Etkinlik-%C4%B0li%C5%9Fkileri-I</link>
+    <guid>https://ygtkl16.github.io/tesis-planlama-notlari/01-Ders-Notlar%C4%B1/HF05---Ak%C4%B1%C5%9F,-Alan-ve-Etkinlik-%C4%B0li%C5%9Fkileri-I</guid>
+    <description><![CDATA[ HF05 - Akış, Alan ve Etkinlik İlişkileri I Ana fikir Bölüm planlamasında amaç, benzer işlem rotalarına sahip parçaları ve bunları işleyen makineleri üretim hücreleri halinde gruplayarak taşıma, WIP ve beklemeyi azaltmaktır. ]]></description>
+    <pubDate>Tue, 23 Jun 2026 19:51:22 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
