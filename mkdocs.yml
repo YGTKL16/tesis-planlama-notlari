@@ -74,3 +74,16 @@ nav:
   - Denemeler:
     - "Deneme 01 - Hesap Odaklı": denemeler/deneme01.md
     - "Deneme 02 - Adım Adım Çözümlü Tam Sınav": denemeler/deneme02.md
+  - Soru Bankası:
+    - "HF01 - Giriş Soruları": sorular/hf01.md
+    - "HF02 - Kapasite Soruları": sorular/hf02.md
+    - "HF03 - Rassal Iskarta Soruları": sorular/hf03.md
+    - "HF04 - Fire ve Donanım Soruları": sorular/hf04.md
+    - "HF05 - Hücresel İmalat Soruları": sorular/hf05.md
+    - "HF06 - Akış ve Alan Soruları": sorular/hf06.md
+    - "HF07 - Yerleşim I Soruları": sorular/hf07.md
+    - "HF08 - CRAFT ve İkili Değişim Soruları": sorular/hf08.md
+    - "HF09 - BLOCPLAN ve LOGIC Soruları": sorular/hf09.md
+    - "HF10 - CORELAP ve ALDEP Soruları": sorular/hf10.md
+    - "HF11 - Minisum/Minimax Soruları": sorular/hf11.md
+    - "HF12 - Konum Atama Soruları": sorular/hf12.md

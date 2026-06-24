@@ -1,0 +1,2226 @@
+
+<!doctype html>
+<html lang="tr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Tesis Planlama ders notları ve deneme sınavları">
+      
+      
+      
+        <link rel="canonical" href="https://yigitkl16.github.io/tesis-planlama-notlari/sorular/hf11/">
+      
+      
+        <link rel="prev" href="../hf10/">
+      
+      
+        <link rel="next" href="../hf12/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>HF11 - Minisum/Minimax Soruları - Tesis Planlama Ders Notları</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hf11-tesis-konumu-i-sorular" class="md-skip">
+          Ana içeriğe geç
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Başlık">
+    <a href="../.." title="Tesis Planlama Ders Notları" class="md-header__button md-logo" aria-label="Tesis Planlama Ders Notları" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tesis Planlama Ders Notları
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              HF11 - Minisum/Minimax Soruları
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Karanlık moda geç"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Karanlık moda geç" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Aydınlık moda geç"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Aydınlık moda geç" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Ara" placeholder="Ara" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Ara">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Temizle" aria-label="Temizle" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Arama başlatılıyor
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yigitkl16/tesis-planlama-notlari" title="Depoya git" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tesis-planlama-notlari
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Sekmeler" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ana Sayfa
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ders-notlari/hf01/" class="md-tabs__link">
+          
+  
+  
+  Ders Notları
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../denemeler/deneme01/" class="md-tabs__link">
+          
+  
+  
+  Denemeler
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../hf01/" class="md-tabs__link">
+          
+  
+  
+  Soru Bankası
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigasyon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Tesis Planlama Ders Notları" class="md-nav__button md-logo" aria-label="Tesis Planlama Ders Notları" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Tesis Planlama Ders Notları
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yigitkl16/tesis-planlama-notlari" title="Depoya git" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tesis-planlama-notlari
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ana Sayfa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ders Notları
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ders Notları
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ders-notlari/hf01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF01 - Giriş ve Ürün, Süreç, Çizelgeleme Tasarımı I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ders-notlari/hf02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF02 - Tesis Kapasite Planlama
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ders-notlari/hf03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF03 - Ürün, Süreç ve Çizelgeleme Tasarımı II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ders-notlari/hf04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF04 - Ürün, Süreç ve Çizelgeleme Tasarımı III
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ders-notlari/hf05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF05 - Akış, Alan ve Etkinlik İlişkileri I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ders-notlari/hf06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF06 - Akış, Alan ve Etkinlik İlişkileri II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ders-notlari/hf07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF07 - Yerleşim Tasarımı I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ders-notlari/hf08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF08 - Yerleşim Tasarımı II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ders-notlari/hf09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF09 - Yerleşim Tasarımı III
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ders-notlari/hf10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF10 - Yerleşim Tasarımı IV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ders-notlari/hf11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF11 - Tesis Konumu I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ders-notlari/hf12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF12 - Tesis Konumu II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denemeler
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Denemeler
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../denemeler/deneme01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deneme 01 - Hesap Odaklı
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../denemeler/deneme02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deneme 02 - Adım Adım Çözümlü Tam Sınav
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Soru Bankası
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Soru Bankası
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hf01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF01 - Giriş Soruları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hf02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF02 - Kapasite Soruları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hf03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF03 - Rassal Iskarta Soruları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hf04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF04 - Fire ve Donanım Soruları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hf05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF05 - Hücresel İmalat Soruları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hf06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF06 - Akış ve Alan Soruları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hf07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF07 - Yerleşim I Soruları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hf08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF08 - CRAFT ve İkili Değişim Soruları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hf09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF09 - BLOCPLAN ve LOGIC Soruları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hf10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF10 - CORELAP ve ALDEP Soruları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF11 - Minisum/Minimax Soruları
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF11 - Minisum/Minimax Soruları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="İçindekiler">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      İçindekiler
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#minisum-agrlkl-medyan-minimax-u-v-donusumu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minisum (Ağırlıklı Medyan) · Minimax (u-v Dönüşümü)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Minisum (Ağırlıklı Medyan) · Minimax (u-v Dönüşümü)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s01-kolay-minisum-tek-eksen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S01 — Kolay — Minisum Tek Eksen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s02-kolay-minisum-iki-eksen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S02 — Kolay — Minisum İki Eksen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s03-orta-minisum-esit-yar-tuzag-optimum-aralk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S03 — Orta — Minisum Eşit Yarı Tuzağı (Optimum Aralık)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s04-orta-minimax-u-v-donusumu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S04 — Orta — Minimax u-v Dönüşümü
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s05-zor-minimax-optimum-kume-dogru-parcas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S05 — Zor — Minimax Optimum Küme (Doğru Parçası)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hf12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HF12 - Konum Atama Soruları
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="İçindekiler">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      İçindekiler
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#minisum-agrlkl-medyan-minimax-u-v-donusumu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minisum (Ağırlıklı Medyan) · Minimax (u-v Dönüşümü)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Minisum (Ağırlıklı Medyan) · Minimax (u-v Dönüşümü)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s01-kolay-minisum-tek-eksen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S01 — Kolay — Minisum Tek Eksen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s02-kolay-minisum-iki-eksen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S02 — Kolay — Minisum İki Eksen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s03-orta-minisum-esit-yar-tuzag-optimum-aralk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S03 — Orta — Minisum Eşit Yarı Tuzağı (Optimum Aralık)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s04-orta-minimax-u-v-donusumu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S04 — Orta — Minimax u-v Dönüşümü
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s05-zor-minimax-optimum-kume-dogru-parcas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S05 — Zor — Minimax Optimum Küme (Doğru Parçası)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="hf11-tesis-konumu-i-sorular">HF11 — Tesis Konumu I Soruları<a class="headerlink" href="#hf11-tesis-konumu-i-sorular" title="Permanent link">&para;</a></h1>
+<h2 id="minisum-agrlkl-medyan-minimax-u-v-donusumu">Minisum (Ağırlıklı Medyan) · Minimax (u-v Dönüşümü)<a class="headerlink" href="#minisum-agrlkl-medyan-minimax-u-v-donusumu" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Nasıl kullan?</p>
+<p>Soruyu gör → cevaplamayı dene (kapalı kitap) → <code>[!answer]-</code> kutusunu aç → hataları not et.</p>
+</div>
+<hr />
+<h3 id="s01-kolay-minisum-tek-eksen">S01 — Kolay — Minisum Tek Eksen<a class="headerlink" href="#s01-kolay-minisum-tek-eksen" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Soru</p>
+<p>Bir doğru (x ekseni) üzerinde 5 müşteri noktası bulunmaktadır. Koordinatlar ve ağırlıklar:</p>
+<table>
+<thead>
+<tr>
+<th>Müşteri</th>
+<th style="text-align: right;"><span class="arithmatex">\(a_i\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(w_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<p>(a) Ağırlıklı medyan algoritmasını uygulayarak <span class="arithmatex">\(x^*\)</span> bulun.
+(b) <span class="arithmatex">\(f(x^*) = \sum_i w_i |x^* - a_i|\)</span> hesaplayın.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Sezgi &amp; Strateji</p>
+<p><strong>Ne soruluyor:</strong> Tek eksende ağırlıklı medyan → toplam ağırlıklı uzaklığı minimize eden koordinat.
+<strong>Yöntem:</strong> Koordinatı küçükten büyüğe sırala, kümülatif ağırlık tablo, <span class="arithmatex">\(W/2\)</span>'yi aşan ilk koordinat = <span class="arithmatex">\(x^*\)</span>.
+<strong>Dikkat:</strong> Kümülatif ağırlık tam <span class="arithmatex">\(W/2\)</span>'ye eşit olursa tek nokta değil ARALIK vardır (S03'e bak).</p>
+</div>
+<details class="success">
+<summary>Adım adım çözüm</summary>
+<p><strong>Verilen:</strong> <span class="arithmatex">\(a = (2,5,8,11,14)\)</span>, <span class="arithmatex">\(w = (3,5,2,4,1)\)</span>.
+<strong>İstenen:</strong> <span class="arithmatex">\(x^*\)</span> ve <span class="arithmatex">\(f(x^*)\)</span>.</p>
+<p><strong>Adım 1 — Toplam ağırlık ve yarısı</strong>
+$<span class="arithmatex">\(W = 3+5+2+4+1 = 15, \qquad \frac{W}{2} = 7{,}5\)</span>$</p>
+<p><strong>Adım 2 — Kümülatif ağırlık tablosu</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Sıra</th>
+<th style="text-align: right;"><span class="arithmatex">\(a_i\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(w_i\)</span></th>
+<th style="text-align: right;">Kümülatif</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;"><strong>8</strong> ← ilk kez 7,5'i aşıyor</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">15</td>
+</tr>
+</tbody>
+</table>
+<p>Kümülatif ağırlık 7,5'i ilk kez <span class="arithmatex">\(a=5\)</span>'te aşıyor (8 &gt; 7,5). Tek optimum:
+$<span class="arithmatex">\(\boxed{x^* = 5}\)</span>$</p>
+<p><strong>Adım 3 — Amaç değeri</strong></p>
+<p>| Müşteri | <span class="arithmatex">\(|5 - a_i|\)</span> | <span class="arithmatex">\(w_i\)</span> | <span class="arithmatex">\(w_i|5-a_i|\)</span> |
+|---|---:|---:|---:|
+| 1 | 3 | 3 | 9 |
+| 2 | 0 | 5 | 0 |
+| 3 | 3 | 2 | 6 |
+| 4 | 6 | 4 | 24 |
+| 5 | 9 | 1 | 9 |
+| <strong>Toplam</strong> | | | <strong>48</strong> |</p>
+<p><strong>Karar:</strong> Yeni tesis <span class="arithmatex">\(x^*=5\)</span> konumuna yerleştirilmeli; toplam ağırlıklı uzaklık <span class="arithmatex">\(f^*=48\)</span> birimi.</p>
+</details>
+<hr />
+<h3 id="s02-kolay-minisum-iki-eksen">S02 — Kolay — Minisum İki Eksen<a class="headerlink" href="#s02-kolay-minisum-iki-eksen" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Soru</p>
+<p>4 müşteri noktası ve ağırlıkları:</p>
+<table>
+<thead>
+<tr>
+<th>Müşteri</th>
+<th style="text-align: right;"><span class="arithmatex">\((a_i, b_i)\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(w_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td style="text-align: right;">(1, 2)</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>B</td>
+<td style="text-align: right;">(4, 5)</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>C</td>
+<td style="text-align: right;">(6, 1)</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>D</td>
+<td style="text-align: right;">(3, 8)</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<p>(a) <span class="arithmatex">\(x^*\)</span> ve <span class="arithmatex">\(y^*\)</span> koordinatlarını <strong>bağımsız</strong> ağırlıklı medyan ile bulun.
+(b) Optimum konum <span class="arithmatex">\((x^*, y^*)\)</span> için <span class="arithmatex">\(f\)</span> değerini hesaplayın.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Sezgi &amp; Strateji</p>
+<p><strong>Ne soruluyor:</strong> Dikdoğrusal minisum'da iki eksen bağımsızdır — her eksen için ayrı tablo.
+<strong>Yöntem:</strong> x için <span class="arithmatex">\(a_i\)</span> sırala, y için <span class="arithmatex">\(b_i\)</span> sırala; her eksenin kümülatif ağırlık tablosunu kur.
+<strong>Dikkat:</strong> Koordinat-ağırlık çiftini birlikte taşı — sıralama sonrası ağırlıklar karışmasın.</p>
+</div>
+<details class="success">
+<summary>Adım adım çözüm</summary>
+<p><strong>Verilen:</strong> A(1,2,w=3), B(4,5,w=2), C(6,1,w=4), D(3,8,w=1).</p>
+<p><strong>Adım 1 — Toplam ağırlık</strong>
+$<span class="arithmatex">\(W = 3+2+4+1 = 10, \qquad \frac{W}{2} = 5\)</span>$</p>
+<p><strong>Adım 2 — x ekseni (<span class="arithmatex">\(a_i\)</span> küçükten büyüğe)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Müşteri</th>
+<th style="text-align: right;"><span class="arithmatex">\(a_i\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(w_i\)</span></th>
+<th style="text-align: right;">Kümülatif</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>D</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>B</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"><strong>6</strong> ← ilk kez 5'i aşıyor</td>
+</tr>
+<tr>
+<td>C</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table>
+<div class="arithmatex">\[x^* = 4\]</div>
+<p><strong>Adım 3 — y ekseni (<span class="arithmatex">\(b_i\)</span> küçükten büyüğe)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Müşteri</th>
+<th style="text-align: right;"><span class="arithmatex">\(b_i\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(w_i\)</span></th>
+<th style="text-align: right;">Kümülatif</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>A</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;"><strong>7</strong> ← ilk kez 5'i aşıyor</td>
+</tr>
+<tr>
+<td>B</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td>D</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table>
+<div class="arithmatex">\[y^* = 2\]</div>
+<div class="arithmatex">\[\boxed{X^* = (4,\ 2)}\]</div>
+<p><strong>Adım 4 — Amaç değeri</strong></p>
+<p>| Müşteri | <span class="arithmatex">\(|4-a_i|+|2-b_i|\)</span> | <span class="arithmatex">\(w_i\)</span> | <span class="arithmatex">\(w_i \cdot d_i\)</span> |
+|---|---:|---:|---:|
+| A(1,2) | 3+0=3 | 3 | 9 |
+| B(4,5) | 0+3=3 | 2 | 6 |
+| C(6,1) | 2+1=3 | 4 | 12 |
+| D(3,8) | 1+6=7 | 1 | 7 |
+| <strong>Toplam</strong> | | | <strong>34</strong> |</p>
+<p><strong>Karar:</strong> Optimum konum (4, 2); minimum toplam ağırlıklı uzaklık <span class="arithmatex">\(f^* = 34\)</span>.</p>
+</details>
+<hr />
+<h3 id="s03-orta-minisum-esit-yar-tuzag-optimum-aralk">S03 — Orta — Minisum Eşit Yarı Tuzağı (Optimum Aralık)<a class="headerlink" href="#s03-orta-minisum-esit-yar-tuzag-optimum-aralk" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Soru</p>
+<p>4 müşteri noktası, her birinin ağırlığı <span class="arithmatex">\(w = 2\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th>Müşteri</th>
+<th style="text-align: right;"><span class="arithmatex">\(a_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align: right;">14</td>
+</tr>
+</tbody>
+</table>
+<p>(a) Kümülatif ağırlık tablosunu kurun.
+(b) Optimum koordinatı belirleyin. <strong>Tek nokta mı yoksa aralık mı?</strong> Gerekçenizi yazın.
+(c) Optimum aralıktaki herhangi iki farklı nokta için <span class="arithmatex">\(f\)</span> değerini hesaplayarak eşit olduklarını gösterin.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Sezgi &amp; Strateji</p>
+<p><strong>Ne soruluyor:</strong> Kümülatif ağırlık tam <span class="arithmatex">\(W/2\)</span>'ye eşit olduğunda ortaya çıkan <strong>optimum aralık</strong> durumu.
+<strong>Kritik kural:</strong> Kümülatif ağırlık <span class="arithmatex">\(W/2\)</span>'yi AŞIYORSA → tek nokta. TAM EŞITSE → o koordinat ile sonraki büyük koordinat arası aralık.
+<strong>Tuzak:</strong> "İlk kez W/2'ye eşit veya aşan koordinatı seç" deyip tek nokta yazmak.</p>
+</div>
+<details class="success">
+<summary>Adım adım çözüm</summary>
+<p><strong>Verilen:</strong> <span class="arithmatex">\(a = (2,6,10,14)\)</span>, <span class="arithmatex">\(w_i = 2\)</span> (tümü).</p>
+<p><strong>Adım 1 — Toplam ağırlık</strong>
+$<span class="arithmatex">\(W = 2+2+2+2 = 8, \qquad \frac{W}{2} = 4\)</span>$</p>
+<p><strong>Adım 2 — Kümülatif ağırlık tablosu</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Sıra</th>
+<th style="text-align: right;"><span class="arithmatex">\(a_i\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(w_i\)</span></th>
+<th style="text-align: right;">Kümülatif</th>
+<th>Durum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td>&lt; 4</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"><strong>4</strong></td>
+<td><strong>= W/2 (eşit!)</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">6</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">8</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Adım 3 — Karar: Aralık mı, tek nokta mı?</strong></p>
+<p>Kümülatif ağırlık <span class="arithmatex">\(a=6\)</span>'da tam <span class="arithmatex">\(W/2=4\)</span>'e <strong>eşittir</strong> (aşmaz). Bu durumda <span class="arithmatex">\(a=6\)</span> ile bir sonraki koordinat <span class="arithmatex">\(a=10\)</span> arasındaki <strong>her nokta optimumdur</strong>:
+$<span class="arithmatex">\(\boxed{x^* \in [6,\ 10]}\)</span>$</p>
+<div class="admonition warning">
+<p class="admonition-title">Neden aralık?</p>
+<p><span class="arithmatex">\(x \in [6,10]\)</span> aralığında herhangi bir konumdan soldaki toplam ağırlık = <span class="arithmatex">\(w_1+w_2 = 4\)</span>, sağdaki = <span class="arithmatex">\(w_3+w_4 = 4\)</span>. İkisi eşit olduğundan küçük bir sağa harekette sağdan kazanılan = soldan kaybedilen → <span class="arithmatex">\(f\)</span> sabit kalır.</p>
+</div>
+<p><strong>Adım 4 — Doğrulama</strong></p>
+<p><span class="arithmatex">\(x=6\)</span>: <span class="arithmatex">\(\;f = 2(4)+2(0)+2(4)+2(8) = 8+0+8+16 = \mathbf{32}\)</span></p>
+<p><span class="arithmatex">\(x=8\)</span> (orta): <span class="arithmatex">\(\;f = 2(6)+2(2)+2(2)+2(6) = 12+4+4+12 = \mathbf{32}\)</span> ✓</p>
+<p><span class="arithmatex">\(x=10\)</span>: <span class="arithmatex">\(\;f = 2(8)+2(4)+2(0)+2(4) = 16+8+0+8 = \mathbf{32}\)</span> ✓</p>
+<p><strong>Karar:</strong> <span class="arithmatex">\(x^* \in [6,10]\)</span> aralığındaki her nokta <span class="arithmatex">\(f^* = 32\)</span> değerini verir. Tek nokta yazmak eksik cevaptır.</p>
+</details>
+<hr />
+<h3 id="s04-orta-minimax-u-v-donusumu">S04 — Orta — Minimax u-v Dönüşümü<a class="headerlink" href="#s04-orta-minimax-u-v-donusumu" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Soru</p>
+<p>4 mevcut tesisin koordinatları:</p>
+<table>
+<thead>
+<tr>
+<th>Tesis</th>
+<th style="text-align: right;"><span class="arithmatex">\((a_i, b_i)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td style="text-align: right;">(1, 4)</td>
+</tr>
+<tr>
+<td>P2</td>
+<td style="text-align: right;">(6, 1)</td>
+</tr>
+<tr>
+<td>P3</td>
+<td style="text-align: right;">(8, 7)</td>
+</tr>
+<tr>
+<td>P4</td>
+<td style="text-align: right;">(3, 9)</td>
+</tr>
+</tbody>
+</table>
+<p>u-v dönüşümü kullanarak yeni tesisin minimax konumunu (optimum kümeyi) ve <span class="arithmatex">\(R^*\)</span> değerini bulun.</p>
+<p>Adımları gösterin: (a) <span class="arithmatex">\(u_i = a_i+b_i\)</span> ve <span class="arithmatex">\(v_i = a_i-b_i\)</span>. (b) <span class="arithmatex">\(\Delta u\)</span>, <span class="arithmatex">\(\Delta v\)</span>, <span class="arithmatex">\(R^*\)</span>. (c) <span class="arithmatex">\(U^*\)</span> ve <span class="arithmatex">\(V^*\)</span> aralıkları. (d) Geriye dönüşüm.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Sezgi &amp; Strateji</p>
+<p><strong>Ne soruluyor:</strong> Tüm tesislere en büyük uzaklığı minimize eden konumu bul.
+<strong>Yöntem:</strong> u-v dönüşümü → <span class="arithmatex">\(R^* = \frac{1}{2}\max(\Delta u, \Delta v)\)</span> → aralıkları kur → geri dönüştür.
+<strong>Dikkat:</strong> <span class="arithmatex">\(R^*\)</span> için toplam değil <strong>maksimum</strong> alınır. Büyük yayılım, ilgili aralığı TEK NOKTAYA çöktürür. Küçük yayılım aralık → <strong>doğru parçası</strong> üretir.</p>
+</div>
+<details class="success">
+<summary>Adım adım çözüm</summary>
+<p><strong>Adım 1 — Dönüşüm tablosu</strong> (<span class="arithmatex">\(u_i = a_i+b_i\)</span>, <span class="arithmatex">\(v_i = a_i-b_i\)</span>)</p>
+<table>
+<thead>
+<tr>
+<th>Tesis</th>
+<th style="text-align: right;"><span class="arithmatex">\((a_i, b_i)\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(u_i\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(v_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td style="text-align: right;">(1, 4)</td>
+<td style="text-align: right;"><strong>5</strong></td>
+<td style="text-align: right;">−3</td>
+</tr>
+<tr>
+<td>P2</td>
+<td style="text-align: right;">(6, 1)</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;"><strong>5</strong></td>
+</tr>
+<tr>
+<td>P3</td>
+<td style="text-align: right;">(8, 7)</td>
+<td style="text-align: right;"><strong>15</strong></td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>P4</td>
+<td style="text-align: right;">(3, 9)</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;"><strong>−6</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Adım 2 — Yayılımlar ve <span class="arithmatex">\(R^*\)</span></strong>
+$<span class="arithmatex">\(u_{\min}=5,\; u_{\max}=15 \;\Rightarrow\; \Delta u = 10\)</span>$
+$<span class="arithmatex">\(v_{\min}=-6,\; v_{\max}=5 \;\Rightarrow\; \Delta v = 11\)</span>$
+$<span class="arithmatex">\(R^* = \frac{1}{2}\max(10,\;11) = \frac{11}{2} = \mathbf{5{,}5}\)</span>$</p>
+<div class="admonition tip">
+<p class="admonition-title">Büyük Δ → tek nokta, küçük Δ → aralık</p>
+<p><span class="arithmatex">\(\Delta v &gt; \Delta u\)</span> olduğu için <span class="arithmatex">\(V^*\)</span> tek noktaya çöker, <span class="arithmatex">\(U^*\)</span> bir aralık olur → bu aralık <strong>doğru parçası</strong> üretir.</p>
+</div>
+<p><strong>Adım 3 — Optimum aralıklar</strong>
+$<span class="arithmatex">\(U^* = [u_{\max}-R^*,\; u_{\min}+R^*] = [15-5{,}5,\; 5+5{,}5] = [9{,}5,\; 10{,}5]\)</span>$
+$<span class="arithmatex">\(V^* = [v_{\max}-R^*,\; v_{\min}+R^*] = [5-5{,}5,\; -6+5{,}5] = [-0{,}5,\; -0{,}5] \quad (\text{tek nokta})\)</span>$</p>
+<p><span class="arithmatex">\(v^* = -0{,}5\)</span> (sabit), <span class="arithmatex">\(u^* \in [9{,}5,\; 10{,}5]\)</span> (aralık).</p>
+<p><strong>Adım 4 — Geriye dönüşüm</strong> (<span class="arithmatex">\(x = \frac{u+v}{2}\)</span>, <span class="arithmatex">\(y = \frac{u-v}{2}\)</span>)</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\((u, v)\)</span></th>
+<th><span class="arithmatex">\(x\)</span></th>
+<th><span class="arithmatex">\(y\)</span></th>
+<th><span class="arithmatex">\((x, y)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\((9{,}5,\;-0{,}5)\)</span></td>
+<td><span class="arithmatex">\(\frac{9{,}5-0{,}5}{2}=4{,}5\)</span></td>
+<td><span class="arithmatex">\(\frac{9{,}5+0{,}5}{2}=5\)</span></td>
+<td><strong>(4,5 ; 5)</strong></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\((10{,}5,\;-0{,}5)\)</span></td>
+<td><span class="arithmatex">\(\frac{10{,}5-0{,}5}{2}=5\)</span></td>
+<td><span class="arithmatex">\(\frac{10{,}5+0{,}5}{2}=5{,}5\)</span></td>
+<td><strong>(5 ; 5,5)</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Adım 5 — Doğrulama</strong> (nokta <span class="arithmatex">\(x=4{,}75,\ y=5{,}25\)</span> — doğru parçasının ortası)</p>
+<p>| Tesis | <span class="arithmatex">\(|4{,}75-a_i|+|5{,}25-b_i|\)</span> |
+|---|---:|
+| P1(1,4) | 3,75+1,25=5 |
+| P2(6,1) | 1,25+4,25=<strong>5,5</strong> ← maks |
+| P3(8,7) | 3,25+1,75=5 |
+| P4(3,9) | 1,75+3,75=<strong>5,5</strong> ← maks |</p>
+<p>Maks = 5,5 = <span class="arithmatex">\(R^*\)</span> ✓</p>
+<p><strong>Karar:</strong> Optimum küme, <span class="arithmatex">\((4{,}5;\,5)\)</span> ile <span class="arithmatex">\((5;\,5{,}5)\)</span> arasındaki doğru parçasıdır; <span class="arithmatex">\(R^* = 5{,}5\)</span>.</p>
+</details>
+<hr />
+<h3 id="s05-zor-minimax-optimum-kume-dogru-parcas">S05 — Zor — Minimax Optimum Küme (Doğru Parçası)<a class="headerlink" href="#s05-zor-minimax-optimum-kume-dogru-parcas" title="Permanent link">&para;</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Soru</p>
+<p>5 mevcut tesisin koordinatları:</p>
+<table>
+<thead>
+<tr>
+<th>Tesis</th>
+<th style="text-align: right;"><span class="arithmatex">\((a_i, b_i)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td style="text-align: right;">(0, 0)</td>
+</tr>
+<tr>
+<td>P2</td>
+<td style="text-align: right;">(10, 0)</td>
+</tr>
+<tr>
+<td>P3</td>
+<td style="text-align: right;">(5, 5)</td>
+</tr>
+<tr>
+<td>P4</td>
+<td style="text-align: right;">(2, 8)</td>
+</tr>
+<tr>
+<td>P5</td>
+<td style="text-align: right;">(8, 4)</td>
+</tr>
+</tbody>
+</table>
+<p>(a) Tüm <span class="arithmatex">\(u_i\)</span> ve <span class="arithmatex">\(v_i\)</span> değerlerini hesaplayın.
+(b) <span class="arithmatex">\(R^*\)</span> değerini bulun; hangi yayılım belirleyicidir?
+(c) <span class="arithmatex">\(U^*\)</span> ve <span class="arithmatex">\(V^*\)</span> aralıklarını kurun.
+(d) Geriye dönüşümle <strong>optimum doğru parçasının uç noktalarını</strong> belirleyin.
+(e) Uç noktalardan birinde tüm tesislere Manhattan uzaklıklarını hesaplayıp maksimumun <span class="arithmatex">\(R^*\)</span>'ya eşit olduğunu doğrulayın.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Sezgi &amp; Strateji</p>
+<p><strong>Ne soruluyor:</strong> Büyük bir Δv, V<em>'ı tek noktaya çökertir; U</em> aralık → doğru parçası.
+<strong>Dikkat:</strong> Minimax sınav sorularında sadece merkez nokta yazmak eksik cevaptır — tüm optimum kümeyi (doğru parçasını) tanımlamak gerekir.</p>
+</div>
+<details class="success">
+<summary>Adım adım çözüm</summary>
+<p><strong>Adım 1 — u-v dönüşümü</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tesis</th>
+<th style="text-align: right;"><span class="arithmatex">\((a_i, b_i)\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(u_i=a_i+b_i\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(v_i=a_i-b_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td style="text-align: right;">(0, 0)</td>
+<td style="text-align: right;"><strong>0</strong></td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>P2</td>
+<td style="text-align: right;">(10, 0)</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;"><strong>10</strong></td>
+</tr>
+<tr>
+<td>P3</td>
+<td style="text-align: right;">(5, 5)</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>P4</td>
+<td style="text-align: right;">(2, 8)</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;"><strong>−6</strong></td>
+</tr>
+<tr>
+<td>P5</td>
+<td style="text-align: right;">(8, 4)</td>
+<td style="text-align: right;"><strong>12</strong></td>
+<td style="text-align: right;">4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Adım 2 — Yayılımlar ve <span class="arithmatex">\(R^*\)</span></strong>
+$<span class="arithmatex">\(u_{\min}=0,\; u_{\max}=12 \;\Rightarrow\; \Delta u=12\)</span>$
+$<span class="arithmatex">\(v_{\min}=-6,\; v_{\max}=10 \;\Rightarrow\; \Delta v=16\)</span>$</p>
+<div class="arithmatex">\[R^* = \frac{1}{2}\max(12,\;16) = \frac{16}{2} = \mathbf{8}\]</div>
+<p>Belirleyici yayılım: <span class="arithmatex">\(\Delta v = 16\)</span> (daha büyük).</p>
+<p><strong>Adım 3 — Optimum aralıklar</strong></p>
+<p><span class="arithmatex">\(V^*\)</span> tek noktaya çöker (belirleyici = <span class="arithmatex">\(\Delta v\)</span>):
+$<span class="arithmatex">\(V^* = [v_{\max}-R^*,\; v_{\min}+R^*] = [10-8,\; -6+8] = [2,\;2] \;\Rightarrow\; v^*=2\)</span>$</p>
+<p><span class="arithmatex">\(U^*\)</span> aralık:
+$<span class="arithmatex">\(U^* = [u_{\max}-R^*,\; u_{\min}+R^*] = [12-8,\; 0+8] = [4,\;8]\)</span>$</p>
+<p><strong>Adım 4 — Geriye dönüşüm</strong> (<span class="arithmatex">\(v^*=2\)</span> sabit, <span class="arithmatex">\(u^* \in [4,8]\)</span>)</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\((u, v)\)</span></th>
+<th><span class="arithmatex">\(x=\frac{u+v}{2}\)</span></th>
+<th><span class="arithmatex">\(y=\frac{u-v}{2}\)</span></th>
+<th>Nokta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\((4,\;2)\)</span></td>
+<td>3</td>
+<td>1</td>
+<td><strong>(3, 1)</strong></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\((8,\;2)\)</span></td>
+<td>5</td>
+<td>3</td>
+<td><strong>(5, 3)</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Optimum doğru parçası: <strong>(3, 1) ile (5, 3) arasındaki tüm noktalar</strong> (<span class="arithmatex">\(u+v=2 \cdot x + 0 = x+y\)</span> olduğundan doğru parçası <span class="arithmatex">\(x+y-2x = y-x = \text{const}\)</span> denklemini sağlar, yani <span class="arithmatex">\(y-x=−2\)</span> doğrusu üzerindedir).</p>
+<p>Actually: <span class="arithmatex">\((3,1)\)</span>: <span class="arithmatex">\(y-x=1-3=-2\)</span>. <span class="arithmatex">\((5,3)\)</span>: <span class="arithmatex">\(y-x=3-5=-2\)</span>. ✓ Doğru parçası <span class="arithmatex">\(y = x-2\)</span> üzerinde.</p>
+<p><strong>Adım 5 — Doğrulama</strong> (uç nokta <span class="arithmatex">\((3, 1)\)</span>)</p>
+<p>| Tesis | <span class="arithmatex">\(|3-a_i|+|1-b_i|\)</span> |
+|---|---:|
+| P1(0,0) | 3+1=4 |
+| P2(10,0) | 7+1=<strong>8</strong> ← maks |
+| P3(5,5) | 2+4=6 |
+| P4(2,8) | 1+7=<strong>8</strong> ← maks |
+| P5(8,4) | 5+3=<strong>8</strong> ← maks |</p>
+<p>Maksimum = 8 = <span class="arithmatex">\(R^*\)</span> ✓</p>
+<p><strong>Doğrulama</strong> (uç nokta <span class="arithmatex">\((5, 3)\)</span>)</p>
+<p>| Tesis | <span class="arithmatex">\(|5-a_i|+|3-b_i|\)</span> |
+|---|---:|
+| P1(0,0) | 5+3=<strong>8</strong> ← maks |
+| P2(10,0) | 5+3=<strong>8</strong> ← maks |
+| P3(5,5) | 0+2=2 |
+| P4(2,8) | 3+5=<strong>8</strong> ← maks |
+| P5(8,4) | 3+1=4 |</p>
+<p>Maksimum = 8 = <span class="arithmatex">\(R^*\)</span> ✓</p>
+<p><strong>Karar:</strong> Optimum küme, <span class="arithmatex">\((3,1)\)</span> ile <span class="arithmatex">\((5,3)\)</span> arasındaki doğru parçasıdır (doğrusu: <span class="arithmatex">\(y = x-2\)</span>, <span class="arithmatex">\(x \in [3,5]\)</span>). Minimum maksimum uzaklık <span class="arithmatex">\(R^* = 8\)</span> birimdir.</p>
+<div class="admonition tip">
+<p class="admonition-title">Sınav notu: Δu ≠ Δv ise doğru parçası</p>
+<p>Δu ≠ Δv olduğunda büyük yayılım tek noktaya, küçük yayılım aralığa dönüşür → ters dönüşümde <strong>doğru parçası</strong> oluşur. Δu = Δv olduğunda her iki yayılım da tek noktaya çöker → <strong>tek optimum nokta</strong> elde edilir.</p>
+</div>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Başa dön
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Kopyaland\u0131", "clipboard.copy": "Kopyala", "search.result.more.one": "Bu sayfada 1 tane daha", "search.result.more.other": "Bu sayfada # tane daha", "search.result.none": "E\u015fle\u015fen dok\u00fcman bulunamad\u0131", "search.result.one": "1 dok\u00fcman bulundu", "search.result.other": "# dok\u00fcman bulundu", "search.result.placeholder": "Aramaya ba\u015flamak i\u00e7in yaz\u0131n", "search.result.term.missing": "Eksik", "select.version": "Versiyon se\u00e7"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
