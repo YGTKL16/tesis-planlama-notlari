@@ -1,0 +1,35 @@
+.dashboard h1 {
+  color: var(--interactive-accent);
+  letter-spacing: -0.03em;
+}
+
+.markdown-rendered table {
+  width: 100%;
+}
+
+.markdown-rendered th {
+  background: color-mix(in srgb, var(--interactive-accent) 18%, transparent);
+}
+
+.callout[data-callout="summary"] {
+  --callout-color: 37, 99, 235;
+}
+
+.callout[data-callout="formula"] {
+  --callout-color: 124, 58, 237;
+  --callout-icon: lucide-sigma;
+}
+
+.exam-hub h2 {
+  border-bottom: 2px solid color-mix(in srgb, var(--interactive-accent) 35%, transparent);
+  padding-bottom: 0.25rem;
+}
+
+.exam-hub .callout[data-callout="danger"] {
+  --callout-color: 220, 38, 38;
+}
+
+.markdown-rendered img[src$=".svg"] {
+  max-height: 34rem;
+  object-fit: contain;
+}

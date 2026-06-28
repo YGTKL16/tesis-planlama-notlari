@@ -1,0 +1,344 @@
+---
+hafta: 12
+tags: [ders/tesis-planlama, sorular]
+soru_sayısı: 5
+---
+
+# HF12 — Tesis Konumu II Soruları
+
+> [!info] Nasıl kullan?
+> Soruyu gör → her alt soruyu (a–d) kapalı kitap çöz → `[!answer]-` kutusunu aç → hataları not et.
+
+---
+
+### S01 — Kolay — Tek Tesis Seçimi
+
+> [!question] Soru
+> Bir beyaz eşya üreticisi (Arçelik) dört bayisine (C1–C4) hizmet verecek tek bir bölge deposu açacaktır. Üç aday konumdan (L1, L2, L3) biri seçilecek; sabit açma maliyeti yoktur ve her bayi açılan tek depoya atanır.
+>
+> | Müşteri | L1 | L2 | L3 |
+> |---:|---:|---:|---:|
+> | C1 | 40 | 25 | 55 |
+> | C2 | 30 | 45 | 20 |
+> | C3 | 55 | 35 | 30 |
+> | C4 | 25 | 50 | 40 |
+>
+> a) Her adayın hizmet (sütun) toplamını hesaplayın.
+> b) En ucuz tek tesis konumunu ve maliyetini belirleyin.
+> c) Seçilen tesiste hangi bayilerin "ucuza", hangilerinin "pahalıya" geldiğini yorumlayın.
+> ç) Sabit maliyet olmadığında "en yakın atama" mantığı neden geçerli değildir? Açıklayın.
+> d) L1 ve L3 maliyetleri çok yakın olsaydı (örn. 148 vs 145), karar verirken sayısal toplam dışında hangi nitel faktörler devreye girerdi?
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** Tek açık tesis → her müşteri o tesise atanır, sütun toplamları karşılaştırılır.
+> **Hangi yöntem:** $TC(\{L_i\}) = \sum_j c_{ij}$ — sütunu topla, en küçüğü seç.
+> **Dikkat:** Sabit maliyet yoksa sütun toplamı = toplam maliyet.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Her adayın sütununu topluyoruz.
+> Hesap:
+> $$TC(L_1) = 40+30+55+25 = 150$$
+> $$TC(L_2) = 25+45+35+50 = 155$$
+> $$TC(L_3) = 55+20+30+40 = 145$$
+> Sonuç: 150 / 155 / 145.
+> Neden: Tek tesiste tüm talep o sütundan karşılanır.
+>
+> **b)**
+> Ne yapıyoruz: En küçük toplamı seçiyoruz.
+> Sonuç: **L3** açılır, toplam maliyet **145**.
+> Neden: L3 sütun toplamı en düşük; sabit maliyet sıfır olduğundan doğrudan toplam maliyettir.
+>
+> **c)**
+> Ne yapıyoruz: L3'te müşteri maliyetlerini yorumluyoruz.
+> Sonuç: C2 (20) ve C3 (30) L3'e çok ucuz gelir; C1 (55) ise en pahalı kalan müşteridir.
+> Neden: L3, C2–C3 bölgesine yakın; C1 uzakta, bu yüzden tek tesis seçiminde C1 dezavantajlı kalır.
+>
+> **ç)**
+> Ne yapıyoruz: "En yakın atama" kavramının neden uygulanmadığını açıklıyoruz.
+> Sonuç: Tek tesis açıldığından müşterinin seçeneği yok — herkes aynı (tek) tesise gitmek zorunda; "en yakını seç" ancak birden çok açık tesis olunca anlamlıdır.
+> Neden: Atama serbestliği yalnız çoklu tesis senaryosunda doğar; tekli problemde karar "hangi tek tesis?"tir, "müşteri hangi tesise?" değil.
+>
+> **d)**
+> Ne yapıyoruz: Yakın maliyetlerde nitel faktörleri sıralıyoruz.
+> Sonuç: Arazi/kira maliyeti, ulaşım altyapısı ve genişleme potansiyeli, iş gücü erişimi, teşvik bölgesi olup olmaması, müşteri büyüme tahmini gibi faktörler belirleyici olur.
+> Neden: 3 TL'lik fark belirsizlik payının altında kalır; bu durumda model "kayıtsız" olduğundan stratejik/nitel ölçütler ağır basar (bkz. puan yöntemi).
+
+---
+
+### S02 — Kolay — p = 2 Enümerasyon
+
+> [!question] Soru
+> Bir kargo şirketi tam 2 aktarma merkezi açacaktır; 4 aday konum (L1–L4) ve 4 bölge (C1–C4) vardır. Her bölge en ucuz açık merkeze atanır. Planlamacı tüm $\binom{4}{2}=6$ ikiliyi enümere edip en ucuzunu bulacaktır.
+>
+> | Müşteri | L1 | L2 | L3 | L4 |
+> |---:|---:|---:|---:|---:|
+> | C1 | 10 | 30 | 50 | 40 |
+> | C2 | 40 | 15 | 20 | 35 |
+> | C3 | 50 | 35 | 10 | 25 |
+> | C4 | 30 | 20 | 35 | 10 |
+>
+> a) Kaç ikili kombinasyon olduğunu ve neden hepsinin denenmesi gerektiğini belirtin.
+> b) Üç ikili için ({L1,L2}, {L1,L3}, {L2,L3}) müşteri başına $\min$ alıp toplamları hesaplayın.
+> c) Kalan ikilileri ({L1,L4}, {L2,L4}, {L3,L4}) hesaplayıp özet tabloyu tamamlayın.
+> ç) En ucuz ikiliyi, atama planını ve toplam maliyeti belirleyin.
+> d) "Sezgisel en iyi ikiliyi seç" yaklaşımı bu problemde neden yanıltıcı olabilir? Bir örnekle gösterin.
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** p-medyan enümerasyonu — sabit p=2 tesis, toplam hizmet maliyeti minimize.
+> **Hangi yöntem:** Her ikili için her müşteriye $\min(c_{ij})$ uygula, topla.
+> **Dikkat:** 6 kombinasyonun hepsi yazılmalı; "sezgisel en iyi" yanıltabilir.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Kombinasyon sayısını buluyoruz.
+> Hesap: $\binom{4}{2}=6$.
+> Sonuç: 6 ikili; hepsi denenir.
+> Neden: p-medyanın garanti çözümü tam enümerasyondur; küçük p ve n'de bu uygulanabilir.
+>
+> **b)**
+> Ne yapıyoruz: İlk üç ikilide her müşteriye en ucuz tesisi seçiyoruz.
+> Hesap:
+> {L1,L2}: $10+15+35+20 = \mathbf{80}$
+> {L1,L3}: $10+20+10+30 = \mathbf{70}$
+> {L2,L3}: $30+15+10+20 = \mathbf{75}$
+> Sonuç: 80 / 70 / 75.
+> Neden: Müşteri açık iki tesisten ucuzuna gider.
+>
+> **c)**
+> Ne yapıyoruz: Kalan üç ikiliyi hesaplayıp tablo tamamlıyoruz.
+> Hesap:
+> {L1,L4}: $10+35+25+10 = \mathbf{80}$
+> {L2,L4}: $30+15+25+10 = \mathbf{80}$
+> {L3,L4}: $40+20+10+10 = \mathbf{80}$
+>
+> | İkili | TC |
+> |:---|---:|
+> | {L1,L2} | 80 |
+> | **{L1,L3}** | **70** ← min |
+> | {L1,L4} | 80 |
+> | {L2,L3} | 75 |
+> | {L2,L4} | 80 |
+> | {L3,L4} | 80 |
+>
+> Sonuç: Minimum {L1,L3} = 70.
+> Neden: Bu ikili her müşteriye en düşük toplam atamayı sağlar.
+>
+> **ç)**
+> Ne yapıyoruz: Optimum ikiliyi ve atamayı yazıyoruz.
+> Sonuç: **{L1, L3}** açılır; C1→L1(10), C2→L3(20), C3→L3(10), C4→L1(30); toplam **70**.
+> Neden: L1 (C1, C4) ve L3 (C2, C3) bölgesel olarak tamamlayıcı.
+>
+> **d)**
+> Ne yapıyoruz: Sezgiselin riskini örnekle gösteriyoruz.
+> Sonuç: "L4 birçok satırda küçük değer içeriyor, L4'lü ikili iyidir" sezgisi yanlış: {L3,L4}, {L2,L4}, {L1,L4} hepsi 80 verir, {L1,L3}'ten kötüdür.
+> Neden: Toplam maliyet bireysel hücrelere değil, müşteri başına en iyi eşleşmenin toplamına bağlıdır; iki tesisin "kapsama tamamlayıcılığı" tek tek küçük değerlerden daha belirleyicidir.
+
+---
+
+### S03 — Orta — Net Tasarruf Analizi
+
+> [!question] Soru
+> Arçelik'in bölge müdürü, S01'deki veri setinde başlangıçta yalnız **L1** deposu açıktır ve tüm bayiler L1'e atanmıştır. L2'nin sabit açma maliyeti **45 TL**'dir. Müdür, L2'yi açmanın getireceği brüt tasarrufu sabit maliyetle kıyaslayıp karar verecektir.
+>
+> | Müşteri | L1 | L2 | L3 |
+> |---:|---:|---:|---:|
+> | C1 | 40 | 25 | 55 |
+> | C2 | 30 | 45 | 20 |
+> | C3 | 55 | 35 | 30 |
+> | C4 | 25 | 50 | 40 |
+>
+> a) Hangi müşterilerin L2'ye geçtiğini ($c_{1j} > c_{2j}$) belirleyin.
+> b) Brüt tasarrufu $GS=\sum_j \max\{0,\, c_{1j}-c_{2j}\}$ hesaplayın.
+> c) Net tasarrufu $NS=GS-F_{L_2}$ hesaplayıp kararı verin.
+> ç) Toplam maliyetleri (yalnız L1 vs L1+L2) hesaplayarak kararı doğrulayın.
+> d) $F_{L_2}$ kaç TL'nin altına inerse L2 açmak kârlı olurdu? Eşik değeri bulun.
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** Yeni tesis eklemenin kârlılığı — brüt tasarruf vs. sabit maliyet.
+> **Hangi yöntem:** $GS = \sum_j \max\{0,\; c_{1j} - c_{2j}\}$; $NS = GS - F_{L_2}$.
+> **Dikkat:** Negatif farkları toplama — müşteri ucuzsa geçer, değilse kalır.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Her müşteride L1 ve L2 maliyetini kıyaslıyoruz.
+> Hesap: C1: 40>25 ✓ geçer; C2: 30<45 kalır; C3: 55>35 ✓ geçer; C4: 25<50 kalır.
+> Sonuç: C1 ve C3 L2'ye geçer; C2 ve C4 L1'de kalır.
+> Neden: Müşteri yalnız ucuzladığı tesise kayar.
+>
+> **b)**
+> Ne yapıyoruz: Yalnız pozitif farkları topluyoruz.
+> Hesap: $GS = \max(0,15)+\max(0,-15)+\max(0,20)+\max(0,-25) = 15+0+20+0 = 35$.
+> Sonuç: $GS=35$.
+> Neden: Sadece geçen müşteriler (C1: 15, C3: 20) tasarruf üretir.
+>
+> **c)**
+> Ne yapıyoruz: Sabit maliyeti düşüyoruz.
+> Hesap: $NS = 35 - 45 = -10$.
+> Sonuç: $NS=-10 < 0$ → L2 **açılmaz**.
+> Neden: Açma maliyeti, geçen müşterilerin tasarrufunu aşıyor.
+>
+> **ç)**
+> Ne yapıyoruz: İki senaryonun toplam maliyetini kıyaslıyoruz.
+> Hesap:
+> Yalnız L1: $40+30+55+25 = 150$.
+> L1+L2: C1→L2(25), C3→L2(35), C2→L1(30), C4→L1(25) = 115 hizmet + 45 sabit = $160$.
+> Sonuç: $160 > 150$ → mevcut durum daha ucuz, doğrulandı.
+> Neden: Net tasarruf negatifliği toplam maliyet artışı olarak görünür (160−150 = 10 = |NS|).
+>
+> **d)**
+> Ne yapıyoruz: Kâr eşiğini buluyoruz.
+> Hesap: $NS \ge 0 \Rightarrow F_{L_2} \le GS = 35$.
+> Sonuç: $F_{L_2} < 35$ TL ise L2 açmak kârlı (tam 35'te kayıtsız).
+> Neden: Brüt tasarruf 35 sabit; sabit maliyet bunun altına indiğinde net tasarruf pozitife döner.
+>
+> > [!warning] Negatif NS = açma
+> > $NS < 0$: sabit maliyet, geçen müşterilerin tasarrufundan büyük; tesis açmak toplam maliyeti artırır.
+
+---
+
+### S04 — Orta — UFLP Tam Enümerasyon
+
+> [!question] Soru
+> Bir gıda dağıtım şirketi 3 aday tesis ve 4 müşteri için kapasitesiz tesis konumlandırma (UFLP) çözecektir. Sabit maliyetler: $F_1=100$, $F_2=80$, $F_3=60$. Planlamacı $2^3-1=7$ açık tesis kümesini tek tek enümere edecektir.
+>
+> | Müşteri | L1 | L2 | L3 |
+> |---:|---:|---:|---:|
+> | C1 | 20 | 30 | 50 |
+> | C2 | 35 | 15 | 25 |
+> | C3 | 50 | 40 | 10 |
+> | C4 | 25 | 20 | 35 |
+>
+> $TC(S) = \sum_{i \in S} F_i + \sum_j \min_{i \in S} c_{ij}$.
+>
+> a) Tekli kümelerin ({L1},{L2},{L3}) TC değerlerini hesaplayın.
+> b) İkili kümelerin TC değerlerini hesaplayın.
+> c) Üçlü kümeyi hesaplayıp 7 kümeyi özet tabloda toplayın.
+> ç) Optimum kümeyi, atamayı ve toplam maliyeti belirleyin.
+> d) "Daha fazla tesis = daha düşük hizmet ama daha yüksek sabit maliyet" gerilimini bu veride sayısal olarak gösterin.
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** UFLP — sabit + hizmet maliyeti toplamını minimize eden küme.
+> **Hangi yöntem:** 7 küme enümerasyonu; her kümede müşteri başına sütun minimumu.
+> **Dikkat:** Sabit maliyet birikir; daha fazla tesis hizmeti ucuzlatır ama sabiti artırır.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Tekli kümelerde sütun toplamı + sabit.
+> Hesap:
+> {L1}: $130+100=\mathbf{230}$
+> {L2}: $105+80=\mathbf{185}$
+> {L3}: $120+60=\mathbf{180}$
+> Sonuç: 230 / 185 / 180.
+> Neden: Tek tesiste hizmet = o sütunun toplamı.
+>
+> **b)**
+> Ne yapıyoruz: İkililerde müşteri başına min-hizmet + birikmiş sabit.
+> Hesap:
+> {L1,L2}: $\min$-hizmet $20+15+40+20=95$; sabit 180; $\mathbf{275}$
+> {L1,L3}: $20+25+10+25=80$; sabit 160; $\mathbf{240}$
+> {L2,L3}: $30+15+10+20=75$; sabit 140; $\mathbf{215}$
+> Sonuç: 275 / 240 / 215.
+> Neden: İki açık tesis hizmeti düşürür ama sabit toplanır.
+>
+> **c)**
+> Ne yapıyoruz: Üçlüyü hesaplayıp tabloyu topluyoruz.
+> Hesap: {L1,L2,L3}: min-hizmet $20+15+10+20=65$; sabit 240; $\mathbf{305}$.
+>
+> | Küme | Hizmet | Sabit | TC |
+> |:---|---:|---:|---:|
+> | {L1} | 130 | 100 | 230 |
+> | {L2} | 105 | 80 | 185 |
+> | **{L3}** | 120 | 60 | **180** ← min |
+> | {L1,L2} | 95 | 180 | 275 |
+> | {L1,L3} | 80 | 160 | 240 |
+> | {L2,L3} | 75 | 140 | 215 |
+> | {L1,L2,L3} | 65 | 240 | 305 |
+>
+> Sonuç: Minimum {L3} = 180.
+> Neden: En düşük sabit (60) ve birçok müşteriye ucuz hizmet aynı kümede çakışıyor.
+>
+> **ç)**
+> Ne yapıyoruz: Optimumu ve atamayı yazıyoruz.
+> Sonuç: **{L3}** açılır; C1→L3(50), C2→L3(25), C3→L3(10), C4→L3(35); toplam **180**.
+> Neden: Tek tesisin düşük sabiti, ikinci tesisin hizmet kazancını telafi etmiyor.
+>
+> **d)**
+> Ne yapıyoruz: Gerilimi sayısal gösteriyoruz.
+> Sonuç: Hizmet maliyeti tesis arttıkça düşer (120 → 75 → 65) ama sabit yükselir (60 → 140 → 240); toplam {L3}=180'den {L2,L3}=215'e ve üçlü 305'e çıkar.
+> Neden: Marjinal tesisin hizmet kazancı (örn. L3→{L2,L3}: 120→75, 45 kazanç) sabit artışından (60→140, 80 artış) küçük olunca toplam kötüleşir; UFLP bu dengeyi bulur.
+>
+> > [!warning] Sezgisel yanılgı
+> > Burada "en ucuz sabit = en iyi" tesadüfen tuttu; her zaman tutmaz. Tabloya bakmadan karar verme.
+
+---
+
+### S05 — Zor — p-medyan vs p-merkez
+
+> [!question] Soru
+> Aynı kargo şirketi (S02 veri seti, 4 müşteri, 4 aday, p=2) artık iki farklı amaçla karşılaştırma yapıyor: lojistik ekibi toplam maliyeti, acil teslimat ekibi en uzak müşterinin maliyetini önemsiyor. Aynı veride iki kriterin farklı sonuç verip vermediği incelenecektir.
+>
+> | Müşteri | L1 | L2 | L3 | L4 |
+> |---:|---:|---:|---:|---:|
+> | C1 | 10 | 30 | 50 | 40 |
+> | C2 | 40 | 15 | 20 | 35 |
+> | C3 | 50 | 35 | 10 | 25 |
+> | C4 | 30 | 20 | 35 | 10 |
+>
+> a) Her ikili için [toplam | maksimum] maliyet tablosunu kurun.
+> b) p-medyan (toplam minimize) optimumunu belirleyin.
+> c) p-merkez (maksimum minimize) optimum(lar)ını belirleyin.
+> ç) İki kriterin çeliştiği bir ikiliyi gösterip yorumlayın.
+> d) Hangi uygulama hangi kriteri seçmeli? Bir karar rehberi yazın.
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** Aynı veride iki amaç fonksiyonunun farklı sonuç üretip üretemeyeceği.
+> **p-medyan:** $\min \sum_j \min_{i \in S} c_{ij}$ — ortalamayı iyileştir.
+> **p-merkez:** $\min \max_j \min_{i \in S} c_{ij}$ — en kötü durumu iyileştir.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Her ikilide müşteri başına en ucuz atamayı bulup hem toplamı hem maksimumu yazıyoruz.
+> Hesap:
+>
+> | İkili | C1 | C2 | C3 | C4 | **Toplam** | **Maks** |
+> |:---|---:|---:|---:|---:|---:|---:|
+> | {L1,L2} | 10 | 15 | 35 | 20 | 80 | 35 |
+> | **{L1,L3}** | 10 | 20 | 10 | 30 | **70** | 30 |
+> | {L1,L4} | 10 | 35 | 25 | 10 | 80 | 35 |
+> | {L2,L3} | 30 | 15 | 10 | 20 | 75 | 30 |
+> | {L2,L4} | 30 | 15 | 25 | 10 | 80 | 30 |
+> | {L3,L4} | 40 | 20 | 10 | 10 | 80 | 40 |
+>
+> Sonuç: İki ölçütlü tablo yukarıdaki gibi.
+> Neden: Her ikili için aynı atamadan hem toplam hem en pahalı müşteri okunur.
+>
+> **b)**
+> Ne yapıyoruz: En küçük "Toplam"ı seçiyoruz.
+> Sonuç: p-medyan optimumu **{L1,L3}**, toplam **70** (tek ve benzersiz).
+> Neden: 70, altı ikili içinde tek minimum.
+>
+> **c)**
+> Ne yapıyoruz: En küçük "Maks"ı seçiyoruz.
+> Sonuç: p-merkez optimumu maks=**30** → {L1,L3}, {L2,L3}, {L2,L4} (üç eşit optimum).
+> Neden: Üç ikilide en uzak müşteri maliyeti 30; p-merkez yalnız en kötüyü umursar.
+>
+> **ç)**
+> Ne yapıyoruz: Çelişen ikiliyi gösteriyoruz.
+> Sonuç: {L2,L4} p-merkez açısından optimal (maks=30) ama p-medyan açısından kötü (toplam=80 > 70).
+> Neden: En kötü müşteri iyi olsa da diğer müşterilerin toplam maliyeti yüksek; iki kriter aynı çözümü ödüllendirmiyor.
+>
+> **d)**
+> Ne yapıyoruz: Karar rehberini yazıyoruz.
+> Sonuç:
+>
+> | Durum | Kriter | Neden |
+> |:---|:---|:---|
+> | Depo/lojistik, ortalama teslimat önemli | **p-medyan** | Toplam maliyeti minimize eder |
+> | Ambulans/itfaiye, "kimse çok uzakta kalmasın" | **p-merkez** | En kötü durumu minimize eder |
+> | İkisi de kritik | İkisini hesapla, uzlaşı seç | — |
+>
+> Neden: p-medyan her müşteriyi eşit sayar (verim); p-merkez en dezavantajlıya odaklanır (eşitlik/güvenlik). Uygulamanın önceliği kriteri belirler.
+>
+> > [!warning] İki kriter çelişebilir
+> > {L2,L4} aynı verinin iki kriterinin bağımsız sonuç ürettiğinin somut göstergesidir.

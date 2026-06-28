@@ -1,0 +1,21 @@
+# Hassas
+.env
+
+# Büyük binary dosyalar
+*.pptx
+*.pdf
+*.tex
+
+# Python
+__pycache__/
+*.py
+*.pyc
+
+# Geçici / üretilmiş
+graphify-out/
+extracted_images/
+.playwright-mcp/
+
+# OS
+.DS_Store
+Thumbs.db

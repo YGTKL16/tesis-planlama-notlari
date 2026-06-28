@@ -1,0 +1,337 @@
+---
+hafta: 1
+tags: [ders/tesis-planlama, sorular]
+soru_sayısı: 5
+---
+
+# HF01 — Giriş ve Ürün, Süreç, Çizelgeleme Tasarımı I — Soruları
+
+> [!info] Nasıl kullan?
+> Soruyu gör → cevaplamayı dene (kapalı kitap) → `[!answer]-` kutusunu aç → hataları hata koduyla işaretle.
+
+---
+
+### S01 — Kolay — Tesis planlama bileşenleri
+
+> [!question] Soru
+> Yeni kurulan SavTek Savunma A.Ş.'nin proje müdürü, üst yönetime tesis planlamasının kapsamını anlatan bir sunum hazırlıyor. Yönetim, tesis planlamasının tam olarak hangi kararları kapsadığını net bir liste hâlinde görmek istiyor.
+>
+> a) Tesis planlamasının beş temel bileşenini listeleyin.
+> b) Her bileşenin cevapladığı temel soruyu (kararı) eşleştirin.
+> c) "Tesis konumu" ile "yerleşim tasarımı" arasındaki farkı bir örnekle açıklayın.
+> ç) Bu beş bileşenden hangileri "tesis tasarımı" çatısı altında toplanır?
+> d) Tesis konumunun stratejik düzeyde ayrı tutulmasını kısaca değerlendirin.
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** Tesis planlama hiyerarşisinin ana dalları.
+> **Hangi yöntem:** Kavramsal — hiyerarşi tablosu.
+> **Dikkat:** "Tesis tasarımı" bir çatı kavramdır; altında üç alt karar barındırır. Konumu bunlarla karıştırma.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Beş bileşeni sıralıyoruz.
+> Formül/Yöntem: HF01 tesis planlama çerçevesi (slayt 26).
+> Hesap: (1) Tesis konumu, (2) Tesis sistemleri, (3) Yerleşim tasarımı, (4) Taşıma sistemleri, (5) Destek/hizmet alanları.
+> Sonuç: Beş bileşen yukarıdaki listedir.
+> Neden: Bu beş başlık, tesisin "nerede" ve "nasıl" sorularının tüm boyutlarını kapsar.
+>
+> **b)**
+> Ne yapıyoruz: Her bileşeni cevapladığı kararla eşliyoruz.
+> Formül/Yöntem: Bileşen → temel karar tablosu.
+> Hesap:
+>
+> | Bileşen | Temel karar |
+> |---|---|
+> | Tesis konumu | Tesis nerede kurulacak? (pazar/hammadde yakınlığı, işgücü, vergi, altyapı) |
+> | Tesis sistemleri | Hangi altyapı sistemleri nereye? (yapı, elektrik, iletişim, güvenlik, atık) |
+> | Yerleşim tasarımı | Bölüm ve makineler tesis içinde nasıl dizilecek? |
+> | Taşıma sistemleri | Malzeme, insan ve bilgi akışı nasıl sağlanacak? |
+> | Destek/hizmet alanları | Personel, bakım, yemekhane gibi yardımcı hizmetler nerede? |
+>
+> Sonuç: Her bileşen ayrı bir karar sorusuna karşılık gelir.
+> Neden: Bileşenler birbirinden bağımsız kararlar olmadığı için eşleştirme zincirleme etki gösterir.
+>
+> **c)**
+> Ne yapıyoruz: İki bileşeni örnekle ayırıyoruz.
+> Formül/Yöntem: Tanım karşılaştırması.
+> Hesap: Tesis konumu = "Hangi şehir/bölge?" (örn. SavTek'in Ankara OSB'yi seçmesi). Yerleşim tasarımı = "Seçilen bina içinde montaj, test ve depo bölümlerinin nasıl yerleşeceği".
+> Sonuç: Konum dış (coğrafi), yerleşim iç (bina içi) bir karardır.
+> Neden: Biri stratejik dış çevre, diğeri taktik iç düzen sorusudur.
+>
+> **ç)**
+> Ne yapıyoruz: Çatı kavramı belirliyoruz.
+> Formül/Yöntem: Hiyerarşi.
+> Hesap: "Tesis tasarımı" = Tesis sistemleri + Yerleşim tasarımı + Taşıma sistemleri (+ destek alanları). Tesis konumu bu çatının dışında, stratejik düzeyde durur.
+> Sonuç: Konum hariç dört karar "tesis tasarımı" altındadır.
+> Neden: Tasarım kararları konum sabitlendikten sonra alınır.
+>
+> **d)**
+> Ne yapıyoruz: Konumun ayrı tutulmasını değerlendiriyoruz.
+> Formül/Yöntem: Stratejik–taktik ayrımı.
+> Hesap: Konum kararı uzun vadeli, pahalı ve geri dönüşü zor; tasarım kararları konum sabitken revize edilebilir.
+> Sonuç: Konumun ayrı tutulması doğru bir yaklaşımdır.
+> Neden: Yanlış konum, mükemmel bir iç tasarımla bile telafi edilemez; bu yüzden farklı karar düzeyindedir.
+
+---
+
+### S02 — Kolay — 6 adım ve hafta eşleşmesi
+
+> [!question] Soru
+> Bir lojistik dağıtım merkezinin kurulum ekibinde stajyersiniz. Ekip lideri, tesis planlama sürecinin altı adımını ve bu adımların ders programıyla nasıl örtüştüğünü kavramanızı istiyor.
+>
+> a) Tesis planlama sürecinin altı adımını doğru sırayla yazın.
+> b) Her adımı dersin hangi haftalarına (HF) denk geldiğini eşleştirin.
+> c) Adım 1 (amaç tanımla) ile adım 4 (alan hesapla) arasındaki bağı açıklayın.
+> ç) Adımların sırası değiştirilip alan hesabı amaçtan önce yapılsaydı ne sorun çıkardı?
+> d) Hangi adım tek başına en çok haftayı kapsar, kısaca değerlendirin.
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** Sürecin iskeletini ve dersin yapısını birlikte görmek.
+> **Hangi yöntem:** TABAĞ akronimi — Tanımla, Aktivite, Bağ, Alan, Geliştir, Gözden geçir.
+> **Dikkat:** Adımların sırası önemlidir; amaç ve alan hesabı birbirine bağlıdır, yer değiştirilemez.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Altı adımı sıralıyoruz.
+> Formül/Yöntem: TABAĞ sıralaması.
+> Hesap: (1) Amaç ve hedefleri tanımla, (2) Birincil ve destek aktivitelerini belirle, (3) Faaliyet bağlarını sapta, (4) Alan gereksinimini hesapla, (5) Alternatif planları üret ve değerlendir, (6) Seç, uygula ve gözden geçir.
+> Sonuç: Doğru sıra yukarıdaki gibidir.
+> Neden: Her adım bir öncekinin çıktısını girdi olarak kullanır.
+>
+> **b)**
+> Ne yapıyoruz: Adımları haftalarla eşliyoruz.
+> Formül/Yöntem: Adım → HF tablosu.
+> Hesap:
+>
+> | Adım | İçerik | Hafta |
+> |---:|---|---|
+> | 1 | Amaç ve hedefleri tanımla | HF01–HF02 (ürün, kapasite) |
+> | 2 | Aktiviteleri belirle | HF03–HF04 (süreç, ekipman) |
+> | 3 | Bağları sapta (akış + yakınlık) | HF05–HF06 (hücre, from-to, REL) |
+> | 4 | Alan gereksinimini hesapla | HF06 (alan katsayısı) |
+> | 5 | Alternatif üret ve değerlendir | HF07–HF10 (yerleşim algoritmaları) |
+> | 6 | Seç, uygula, gözden geçir | HF11–HF12 (konum) + sürekli iyileştirme |
+>
+> Sonuç: Her ders bir sürecin adımına oturur.
+> Neden: Müfredat süreç adımlarını takip ettiği için "neden bu hafta bu konu?" sorusunun cevabı buradadır.
+>
+> **c)**
+> Ne yapıyoruz: Amaç–alan bağını açıklıyoruz.
+> Formül/Yöntem: Girdi-çıktı zinciri.
+> Hesap: Amaçta belirlenen üretim miktarı ve ürün karması, aktivite ve makine sayısını; o da alan gereksinimini belirler.
+> Sonuç: Alan hesabı amaçtan türetilir.
+> Neden: Hedef üretim bilinmeden kaç m² gerektiği hesaplanamaz.
+>
+> **ç)**
+> Ne yapıyoruz: Sıra bozulursa ne olur, inceliyoruz.
+> Formül/Yöntem: Bağımlılık analizi.
+> Hesap: Alan amaçtan önce hesaplanırsa, henüz bilinmeyen üretim miktarı için varsayım yapılır; amaç netleşince alan baştan hesaplanmak zorunda kalır.
+> Sonuç: Tekrar iş ve hatalı boyutlandırma doğar.
+> Neden: Adımlar mantıksal bağımlılıkla sıralıdır; sırayı atlamak geri besleme döngüsünü uzatır.
+>
+> **d)**
+> Ne yapıyoruz: En geniş adımı belirleyip değerlendiriyoruz.
+> Formül/Yöntem: Hafta sayımı.
+> Hesap: Adım 5 (alternatif üret ve değerlendir) HF07–HF10 arası dört haftayı doldurur.
+> Sonuç: En çok haftayı adım 5 kapsar.
+> Neden: Yerleşim alternatiflerinin üretimi ve algoritmik değerlendirmesi (CRAFT, ALDEP vb.) sürecin en emek-yoğun kısmıdır.
+
+---
+
+### S03 — Orta — Esneklik ailesi
+
+> [!question] Soru
+> Bir fabrika müdürü "tesisimiz gelecekteki değişimlere hazır olmalı" diyerek tesis özelliklerinin esneklik ailesini ekibine hatırlatmak istiyor ve üretim mühendisinden bu aileyi açıklamasını bekliyor.
+>
+> a) Esneklik ailesinin beş üyesini listeleyin ve her birini tek cümleyle tanımlayın.
+> b) "Esneklik" ile "uyarlanabilirlik" arasındaki temel farkı açıklayın.
+> c) "Seçici işletilebilirlik" için fabrikadan gerçekçi bir örnek verin.
+> ç) Mevsimsel talep dalgalanması bekleniyorsa hangi özellik öncelikli olur, neden?
+> d) Kısıtlı bütçede beş özelliğin hepsi sağlanamıyorsa nasıl bir öncelik stratejisi izlenir?
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** Beş esneklik özelliğini kavramsal düzeyde ayırt etmek.
+> **Hangi yöntem:** Kavramsal — tablo karşılaştırması.
+> **Dikkat:** "Esneklik" ile "uyarlanabilirlik" sık karıştırılır. Esneklik = sıfır değişiklikle karşılama; uyarlanabilirlik = değişiklikle karşılama.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Beş üyeyi tanımlıyoruz.
+> Formül/Yöntem: Esneklik ailesi tablosu.
+> Hesap:
+>
+> | Özellik | Tanım |
+> |---|---|
+> | Esneklik (flexibility) | Hiçbir değişiklik yapmadan farklı gereksinimleri karşılayabilme. |
+> | Modülerlik (modularity) | Kapasitedeki geniş dalgalanmaları modüler birimlerle karşılama. |
+> | Güncellenebilirlik (upgradeability) | Yeni teknoloji ve ekipmanı mevcut altyapıya kolayca entegre etme. |
+> | Uyarlanabilirlik (adaptability) | Takvim, çevrim ve tepe yük dalgalanmalarına değişiklikle uyum sağlama. |
+> | Seçici işletilebilirlik (selective operability) | Arızada yalnız etkilenen bölümü kapatıp gerisini sürdürme. |
+>
+> Sonuç: Beş üye yukarıdaki gibidir.
+> Neden: Her özellik farklı bir belirsizlik türüne (ürün, hacim, teknoloji, zaman, arıza) yanıt verir.
+>
+> **b)**
+> Ne yapıyoruz: İki kavramı ayırıyoruz.
+> Formül/Yöntem: "Değişiklik gerekiyor mu?" testi.
+> Hesap: Esneklik → sistem hiçbir değişiklik yapmadan yeni durumu karşılar. Uyarlanabilirlik → sistem değişiklik (ek vardiya, yeniden ayar) yaparak karşılar.
+> Sonuç: Fark, çözümün "değişiklik gerektirip gerektirmediğidir".
+> Neden: Esneklik tasarımda gömülüdür; uyarlanabilirlik işletme sırasında müdahale ile sağlanır.
+>
+> **c)**
+> Ne yapıyoruz: Seçici işletilebilirliğe örnek veriyoruz.
+> Formül/Yöntem: Senaryo.
+> Hesap: Boya kabininde arıza çıktığında, montaj ve kalite kontrol bölümleri durmaksızın üretimi sürdürür; yalnız boya hattı devre dışı kalır.
+> Sonuç: Arıza tüm tesisi değil tek bölümü durdurur.
+> Neden: Bölümler arası bağımsızlık, tek noktadan tüm sistemin çökmesini önler.
+>
+> **ç)**
+> Ne yapıyoruz: Mevsimsel dalgalanmaya öncelik veriyoruz.
+> Formül/Yöntem: Belirsizlik–özellik eşleştirmesi.
+> Hesap: Mevsimsel talep, takvim ve tepe yük dalgalanmasıdır → bunu karşılayan özellik uyarlanabilirliktir (ek vardiya, fazla mesai). Kalıcı büyüme bekleniyorsa modülerlik öne çıkar.
+> Sonuç: Öncelik uyarlanabilirliktir.
+> Neden: Geçici dalgalanma için kalıcı modül eklemek pahalıdır; uyarlanabilirlik daha ekonomiktir.
+>
+> **d)**
+> Ne yapıyoruz: Kısıtlı bütçe önceliğini belirliyoruz.
+> Formül/Yöntem: Risk–maliyet analizi.
+> Hesap: Firmanın en olası belirsizliği saptanır (ör. ürün çeşidi mi, hacim mi, arıza mı); en yüksek etkili belirsizliği karşılayan özelliğe öncelik verilir.
+> Sonuç: Hepsi yerine en kritik 1–2 özelliğe yatırım yapılır.
+> Neden: Beş özelliğin tamamı ideal olsa da kısıtlı bütçede öncelik, beklenen değişim türüne göre stratejik analizle belirlenir.
+
+---
+
+### S04 — Orta — Eş zamanlı mühendislik ve maliyet kilitleme
+
+> [!question] Soru
+> Bir otomobil fabrikası, yeni bir araç platformunu geliştirirken tasarım departmanı üretim mühendisleriyle paralel çalışmak yerine sıralı çalışmayı tercih etmiştir. Üretim aşamasında ortaya çıkan tasarım değişiklikleri beklenenden çok daha pahalıya mal olmuştur.
+>
+> a) Maliyet kilitleme olgusunu (harcanan maliyet vs kilitlenen maliyet) açıklayın.
+> b) Kavramsal aşamadan üretime kadar değişiklik maliyetinin nasıl değiştiğini bir tabloyla gösterin.
+> c) Sıralı (sequential) çalışmanın yarattığı temel sorunu açıklayın.
+> ç) Eş zamanlı mühendislik bu maliyeti hangi mekanizmayla düşürür?
+> d) Eş zamanlı mühendisliğin uygulanmasının 2 zorluğunu açıklayın.
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** Maliyet kilitleme eğrisinin mantığı ve eş zamanlı mühendisliğin değeri.
+> **Hangi yöntem:** Kavramsal — %80 maliyet kilitleme kuralı + paralel/sıralı karşılaştırması.
+> **Dikkat:** "Harcanan maliyet" ile "kilitlenen maliyet" farklı kavramlardır. Kavramsal aşamada az para harcanır ama kararların çoğu verilmiştir.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Kilitleme olgusunu tanımlıyoruz.
+> Formül/Yöntem: Harcanan vs kilitlenen ayrımı.
+> Hesap: Yaşam döngüsü maliyetinin ~%70–80'i, toplam harcamanın yalnız %5–10'unun yapıldığı kavramsal aşamadaki kararlarla belirlenir (kilitlenir).
+> Sonuç: Az harcama, çok karar = yüksek kilitleme.
+> Neden: Erken alınan kararlar (geometri, malzeme, yöntem) sonraki tüm maliyeti şekillendirir.
+>
+> **b)**
+> Ne yapıyoruz: Aşamalara göre maliyeti tabloluyoruz.
+> Formül/Yöntem: Kilitleme eğrisi.
+> Hesap:
+>
+> | Aşama | Kilitlenen maliyet | Değişiklik maliyeti |
+> |---|---|---|
+> | Kavramsal tasarım | ~%5 harcandı, ~%70 kilitlendi | Düşük (yalnız kâğıt değişir) |
+> | Ayrıntılı tasarım | ~%15 harcandı, ~%85 kilitlendi | Orta (çizim revizyonu) |
+> | Prototip / test | ~%40 harcandı, ~%95 kilitlendi | Yüksek (parçalar yeniden) |
+> | Üretim | ~%80 harcandı, ~%98 kilitlendi | Çok yüksek (hat durur, kalıp değişir) |
+>
+> Sonuç: Değişiklik maliyeti aşama ilerledikçe katlanarak artar.
+> Neden: Geç değişiklik, daha önce kilitlenmiş çok sayıda kararı geri sarar.
+>
+> **c)**
+> Ne yapıyoruz: Sıralı çalışmanın sorununu açıklıyoruz.
+> Formül/Yöntem: Geri besleme gecikmesi.
+> Hesap: Tasarım tamamlanıp tesise devredildiğinde, üretimde keşfedilen bir hata (örn. vidaya anahtarla erişilememesi) tüm süreci geri sarar; kilitleme yüzünden düzeltme çok pahalıdır.
+> Sonuç: Geç keşfedilen hatalar pahalı düzeltmelere yol açar.
+> Neden: Sıralı akışta üretim geri bildirimi tasarıma çok geç ulaşır.
+>
+> **ç)**
+> Ne yapıyoruz: Eş zamanlı mühendisliğin mekanizmasını açıklıyoruz.
+> Formül/Yöntem: Paralel çalışma + erken geri bildirim.
+> Hesap: Ürün, süreç ve tesis ekipleri aynı anda çalışır; tesis planlayıcısı kavramsal aşamada montaj, tezgâh ve akış kısıtlarını ürüne entegre eder.
+> Sonuç: Kararlar eğrinin en sol (en ucuz) noktasında doğru verilir.
+> Neden: Değişiklikler ucuzken yapıldığı için pahalı geç revizyonlar sıfırlanır.
+>
+> **d)**
+> Ne yapıyoruz: İki zorluğu yazıyoruz.
+> Formül/Yöntem: Uygulama dezavantajları.
+> Hesap: (1) Koordinasyon yükü — farklı disiplinlerin eşzamanlı çalışması yoğun iletişim ve toplantı gerektirir. (2) Erken belirsizlik — henüz olgunlaşmamış tasarım üzerinde paralel karar vermek yeniden iş riski taşır.
+> Sonuç: Faydası yüksek olsa da koordinasyon ve belirsizlik maliyeti vardır.
+> Neden: Paralel çalışma disiplinler arası bağımlılığı ve eşgüdüm ihtiyacını artırır.
+
+---
+
+### S05 — Zor — Ürün-süreç-çizelge bilgi akışı ve tesis planlayıcısının rolü
+
+> [!question] Soru
+> Bir mobilya firması yeni bir sandalye modeli üretmeye karar vermiştir; tasarım, süreç ve çizelge ekipleri ayrı ayrı çalışmaktadır. Üretim miktarının iki katına çıkması beklenmekte ve yönetim tesis planlayıcısının bu süreçteki rolünü merak etmektedir.
+>
+> a) Ürün → süreç → çizelge → tesis planlama bilgi akışını şematize edin.
+> b) Tesis planlayıcısının girdilerini ve çıktılarını listeleyin.
+> c) Tesis planlayıcısı bu kararları "yapar mı" yoksa "sorgular mı"? Rolünü açıklayın.
+> ç) Üretim miktarı iki katına çıkarsa tesis planı hangi kanallardan etkilenir?
+> d) "Tesis planı tek seferlik bir çizimdir" iddiasını değerlendirin.
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** Üç tasarımın dinamik ilişkisi ve tesis planlayıcısının aktif rolü.
+> **Hangi yöntem:** Kavramsal — bilgi akışı şeması + geri besleme mantığı.
+> **Dikkat:** Tesis planlayıcısı "bekleyip alanı çizen" değil, erken aşamada etkin geri bildirim veren kişidir.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Bilgi akışını şematize ediyoruz.
+> Formül/Yöntem: Akış + geri besleme diyagramı.
+> Hesap:
+>
+> ```
+> Pazar ihtiyacı
+>       ↓
+> [Ürün Tasarımı] → Patlatılmış montaj çizimi, parça resimleri, BOM
+>       ↓
+> [Süreç Tasarımı] → Operasyon listesi, makine seçimi, yöntem, sıralama
+>       ↓
+> [Çizelge Tasarımı] → Üretim miktarı, zamanlama, ekipman çizelgesi
+>       ↓
+> [Tesis Planlaması] → Yerleşim, taşıma, alan kararları
+>       ↑ (geri besleme)
+> ```
+>
+> Sonuç: Akış yukarıdan aşağı, geri besleme aşağıdan yukarıdır.
+> Neden: Tesis planlayıcısı "bu makine sığmaz" derse süreç ve ürün kararları geri sarılır.
+>
+> **b)**
+> Ne yapıyoruz: Girdi ve çıktıları listeliyoruz.
+> Formül/Yöntem: Girdi → görev → çıktı tablosu.
+> Hesap:
+>
+> | | Tesis planlayıcısı |
+> |---|---|
+> | Girdi (bekler) | BOM, parça resimleri, operasyon listesi, makine seçimi, üretim miktarı ve çizelgesi |
+> | Görev | Alan, akış, yakınlık ve konum gereksinimlerini türetmek |
+> | Çıktı (üretir) | Blok yerleşim, malzeme taşıma sistemi, alan tahsisi, tesis sistemleri özellikleri |
+>
+> Sonuç: Girdileri tasarım ekiplerinden alır, yerleşim çıktısını üretir.
+> Neden: Tesis planı, önceki üç tasarımın kararlarına bağımlıdır.
+>
+> **c)**
+> Ne yapıyoruz: Rolün doğasını açıklıyoruz.
+> Formül/Yöntem: "Karar verir mi, sorgular mı?" testi.
+> Hesap: Tesis planlayıcısı ürün/süreç/çizelge kararlarını yapmaz; ancak bunları sorgulamak ve geri bildirim vermek için erken aşamada masada olmalıdır.
+> Sonuç: Rolü "sorgulayan/geri bildiren"dir, "karar veren" değil.
+> Neden: Kararlar başka ekiplerin; fakat fizibilitesini tesis planlayıcısı denetler.
+>
+> **ç)**
+> Ne yapıyoruz: Kapasite ×2'nin etkilerini sıralıyoruz.
+> Formül/Yöntem: Etki kanalları.
+> Hesap: (1) Makine sayısı artar ($F = SQ/EHR$ yeniden hesaplanır) → alan yetmeyebilir. (2) Alan gereksinimi büyür → blok yerleşim yenilenir. (3) Akış yoğunlaşır → from-to matrisi ve taşıma kapasitesi güncellenir. (4) Konum sorgulanır → genişleme mi, yeni tesis mi?
+> Sonuç: Dört kanaldan da plan yeniden değerlendirilir.
+> Neden: Üretim miktarı tüm boyutlama girdilerini ölçeklediği için plan domino gibi etkilenir.
+>
+> **d)**
+> Ne yapıyoruz: İddiayı değerlendiriyoruz.
+> Formül/Yöntem: Doğru/yanlış gerekçelendirme.
+> Hesap: Talep artışı, ürün karması değişimi ve teknoloji yenileme planı doğrudan etkiler; bu yüzden plan periyodik gözden geçirilir.
+> Sonuç: İddia yanlıştır — tesis planı tek seferlik çizim değildir.
+> Neden: Çizelge değişimleri (adım 6: gözden geçir) planı sürekli güncelleme gerektiren yaşayan bir belge yapar.

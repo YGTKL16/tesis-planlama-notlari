@@ -1,0 +1,388 @@
+---
+hafta: 5
+tags: [ders/tesis-planlama, sorular]
+soru_sayısı: 5
+---
+
+# HF05 — Hücresel İmalat Soruları
+
+> [!info] Nasıl kullan?
+> Soruyu gör → her şıkkı (a–d) kapalı kitap çözmeyi dene → `[!answer]-` kutusunu aç → hata kodla.
+> Kapsam: DCA, ROC, Hollier, hücre maliyet analizi, entegre.
+
+---
+
+### S01 — Kolay — DCA (3×4)
+
+> [!question] Soru
+> TUSAŞ'ın Ankara tesisinde üretim mühendisi Zeynep Hanım, üç tezgâh (M1–M3) ve dört parça tipi (P1–P4) için imalat hücreleri kurmak istiyor. Eline geçen makine-parça matrisini DCA ile düzenleyip hangi parçanın hücreler arası taşıma yarattığını bulması gerekiyor.
+> Aşağıdaki makine-parça matrisi verilmiştir:
+>
+> | | P1 | P2 | P3 | P4 |
+> |---|:---:|:---:|:---:|:---:|
+> | M1 | 1 | 0 | 1 | 0 |
+> | M2 | 0 | 1 | 1 | 0 |
+> | M3 | 1 | 0 | 0 | 1 |
+>
+> a) Matrisin satır ve sütun toplamlarını hesaplayın.
+> b) DCA adımlarını uygulayarak matrisi blok köşegen yapıya getirin ve hücreleri belirleyin.
+> c) İstisna parçayı tespit edip neden istisna olduğunu açıklayın.
+> ç) P3 yalnızca M1 tarafından kullanılsaydı (M2'nin P3 girdisi 0 olsaydı) hücre yapısı nasıl değişirdi?
+> d) İstisna parçanın imalatta yarattığı sorunu ve iki çözüm yolunu belirtin.
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** DCA adımlarıyla blok köşegen yapı bulup istisna parçayı belirlemek.
+> **Hangi yöntem:** DCA — satır/sütun toplamlarıyla sırala, 1'leri köşegende yoğunlaştır.
+> **Dikkat:** P3 iki farklı makine ailesince kullanılıyor → istisna aday.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Her satır ve sütundaki 1'leri sayıyoruz.
+> Formül/Yöntem: $R_i=\sum_j a_{ij}$, $C_j=\sum_i a_{ij}$.
+> Hesap: M1=2, M2=2, M3=2; P1=2, P2=1, P3=2, P4=1.
+> Sonuç: Satır toplamları eşit (2); sütun toplamları P1=2, P2=1, P3=2, P4=1.
+> Neden: DCA sıralaması bu toplamlara dayanır; sıralama eşit satırlarda değişmez.
+>
+> **b)**
+> Ne yapıyoruz: İlk satırın 1'li sütunlarını sola, ilk sütunun 1'li satırlarını yukarı taşıyarak köşegenleştiriyoruz.
+> Formül/Yöntem: DCA — sütunları artan, satırları azalan topla; ardından 1'leri sıkıştır.
+> Hesap: İlk satır M1 (P1, P3) sola → sonra ilk sütun P1 (M1, M3) yukarı → blok yapı:
+>
+> | | P1 | P3 | P4 | P2 |
+> |---|:---:|:---:|:---:|:---:|
+> | M1 | 1 | 1 | 0 | 0 |
+> | M3 | 1 | 0 | 1 | 0 |
+> | M2 | 0 | 1 | 0 | 1 |
+>
+> Sonuç: **Hücre 1 = {M1, M3}** (parçalar P1, P4) ve **Hücre 2 = {M2}** (parça P2).
+> Neden: Sol-üst ve sağ-alt bloklar köşegende yoğunlaştı; geri kalan tek 1 (P3) blok dışı kaldı.
+>
+> **c)**
+> Ne yapıyoruz: Blok dışında kalan parçaya bakıyoruz.
+> Formül/Yöntem: Bir parça iki farklı hücrenin makinesini kullanıyorsa istisnadır.
+> Hesap: P3 → M1 (Hücre 1) ve M2 (Hücre 2) tarafından kullanılıyor.
+> Sonuç: **İstisna parça = P3.**
+> Neden: P3 üretimi her iki hücreye de uğradığından hücreler arası taşıma zorunludur.
+>
+> **ç)**
+> Ne yapıyoruz: M2'nin P3 girdisini 0 yapıp matrisi yeniden değerlendiriyoruz.
+> Formül/Yöntem: P3 yalnız M1 ile → P3 tamamen Hücre 1'in içine düşer.
+> Hesap: M1: P1, P3; M2: P2; M3: P1, P4 → Hücre 1 {M1, M3} parçalar P1, P3, P4; Hücre 2 {M2} parça P2.
+> Sonuç: İstisna **ortadan kalkar**; iki temiz hücre oluşur.
+> Neden: Hiçbir parça iki hücreyi birden kullanmadığından akış tamamen hücre içidir.
+>
+> **d)**
+> Ne yapıyoruz: İstisnanın pratik etkisini ve çözümlerini sıralıyoruz.
+> Formül/Yöntem: İstisna = hücreler arası taşıma → ek maliyet, zaman, çizelgeleme karmaşası.
+> Hesap: P3, M1 ile M2 arasında fiziksel transfer gerektirir.
+> Sonuç: Sorun = hücreler arası taşıma maliyeti/gecikme. Çözümler: **(1)** P3'ü fasona/dışarı vermek, **(2)** M2 (veya M1) kopyasını diğer hücreye eklemek (makine çoğaltma).
+> Neden: Her iki çözüm de P3'ün rotasını tek hücre içine alarak hücreler arası geçişi kaldırır.
+
+---
+
+### S02 — Orta — ROC (4×5)
+
+> [!question] Soru
+> Bosch Bursa fabrikasında süreç iyileştirme uzmanı Kerem Bey, 4 tezgâh ve 5 parça tipinden oluşan bir atölyeyi hücrelere ayırmakla görevlendirildi. ROC algoritmasını en az iki iterasyon çalıştırıp blok köşegen yapıyı ortaya çıkarması bekleniyor.
+> Aşağıdaki 4 makine × 5 parça matrisi verilmiştir:
+>
+> | | P1 | P2 | P3 | P4 | P5 |
+> |---|:---:|:---:|:---:|:---:|:---:|
+> | M1 | 1 | 1 | 0 | 0 | 0 |
+> | M2 | 0 | 1 | 1 | 0 | 0 |
+> | M3 | 0 | 0 | 0 | 1 | 1 |
+> | M4 | 0 | 0 | 0 | 1 | 0 |
+>
+> a) İterasyon 1'de satır ikili ağırlıklarını hesaplayıp satırları yeniden sıralayın.
+> b) Sütun ağırlıklarını hesaplayıp sütunları yeniden sıralayın (iterasyon 1 çıktısı).
+> c) İkinci iterasyonu yapıp yakınsamayı gösterin ve hücreleri belirleyin.
+> ç) P3'ün hangi hücreye ait olduğunu, istisna olup olmadığını açıklayın.
+> d) ROC yönteminin DCA'ya göre bir avantajını ve bir dezavantajını belirtin.
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** ROC ile blok köşegen yapı oluşturup hücreleri ayırmak.
+> **Hangi yöntem:** Binary ağırlık → azalan sıra → satır + sütun → yeniden sırala → yakınsama.
+> **Dikkat:** En sol/üst sütun en yüksek $2^{n-1}$ ağırlığı taşır; azalan sıralama yapılır.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Her satırın binary ağırlığını (sütun ağırlıkları 16, 8, 4, 2, 1) hesaplıyoruz.
+> Formül/Yöntem: $R_i = \sum_j a_{ij}\cdot 2^{(n-j)}$.
+> Hesap: M1=16+8=24, M2=8+4=12, M3=2+1=3, M4=2.
+> Sonuç: Azalan sıra **M1(24) → M2(12) → M3(3) → M4(2)** (sıra değişmedi).
+> Neden: En ağırlıklı 1'leri yukarı taşımak köşegenleşmeyi başlatır.
+>
+> **b)**
+> Ne yapıyoruz: Her sütunun ağırlığını (satır ağırlıkları 8, 4, 2, 1) hesaplıyoruz.
+> Formül/Yöntem: $C_j = \sum_i a_{ij}\cdot 2^{(m-i)}$.
+> Hesap: P1=8, P2=8+4=12, P3=4, P4=2+1=3, P5=2.
+> Sonuç: Azalan sıra **P2(12) → P1(8) → P3(4) → P4(3) → P5(2)**. İterasyon 1 çıktısı:
+>
+> | | P2 | P1 | P3 | P4 | P5 |
+> |---|:---:|:---:|:---:|:---:|:---:|
+> | M1 | 1 | 1 | 0 | 0 | 0 |
+> | M2 | 1 | 0 | 1 | 0 | 0 |
+> | M3 | 0 | 0 | 0 | 1 | 1 |
+> | M4 | 0 | 0 | 0 | 1 | 0 |
+>
+> Neden: Yüksek ağırlıklı sütunlar sola gelir, bloklar belirginleşir.
+>
+> **c)**
+> Ne yapıyoruz: İterasyon 2'de satır ve sütun ağırlıklarını yeniden hesaplıyoruz.
+> Formül/Yöntem: Sıra değişmiyorsa algoritma yakınsamıştır.
+> Hesap: Satır: M1=24, M2=20, M3=3, M4=2 (sıra aynı); Sütun: P2=12, P1=8, P3=4, P4=3, P5=2 (sıra aynı).
+> Sonuç: **Yakınsadı.** Hücre 1 = {M1, M2} (P1, P2, P3); Hücre 2 = {M3, M4} (P4, P5).
+> Neden: İki iterasyonda da sıralar sabit kaldığı için blok köşegen yapı kararlıdır.
+>
+> **ç)**
+> Ne yapıyoruz: P3'ün hangi makinelerce kullanıldığına bakıyoruz.
+> Formül/Yöntem: Tek hücrenin makinesini kullanan parça → o hücre dahili, istisna değil.
+> Hesap: P3 yalnız M2 (Hücre 1) tarafından kullanılıyor.
+> Sonuç: **P3 istisna değildir**; Hücre 1'e aittir.
+> Neden: P3 başka hücrenin makinesine uğramadığından hücreler arası taşıma doğmaz.
+>
+> **d)**
+> Ne yapıyoruz: ROC ile DCA'yı karşılaştırıyoruz.
+> Formül/Yöntem: ROC binary ağırlık tabanlı, DCA basit toplam tabanlıdır.
+> Hesap: ROC ardışık iterasyonla kararlı çözüme yakınsar; DCA tek geçişte sonuçlanır.
+> Sonuç: Avantaj = ROC daha sistematik ve büyük matrislerde daha düzenli blok verir. Dezavantaj = ROC çok büyük matrislerde **taşma (overflow)** ve fazla iterasyon riski taşır.
+> Neden: $2^{n-1}$ ağırlıkları sütun sayısı arttıkça çok büyür, hesabı zorlaştırır.
+
+---
+
+### S03 — Orta — Hollier Yöntemi (5 makine)
+
+> [!question] Soru
+> Arçelik'in çamaşır makinesi hattında yalın üretim sorumlusu Deniz Hanım, beş tezgâh arasındaki malzeme akışını analiz edip tezgâhları en az geri akış olacak şekilde sıralamak istiyor. Elindeki from-to akış değerlerinden Hollier yöntemiyle bir dizilim çıkaracak.
+> Beş makineli bir hücrede from-to akış değerleri aşağıdaki gibidir:
+>
+> | Kaynak → Hedef | Akış |
+> |---|:---:|
+> | M1 → M2 | 30 |
+> | M1 → M3 | 20 |
+> | M2 → M4 | 25 |
+> | M3 → M4 | 15 |
+> | M3 → M5 | 10 |
+> | M4 → M5 | 35 |
+>
+> a) Her makinenin gidiş ($G_i$) ve geliş ($A_i$) toplamlarını ve $G/A$ oranını hesaplayın.
+> b) Oranlara göre Hollier dizilimini bulun.
+> c) Her akışı ileri sıralı / atlamalı / geri olarak sınıflandırıp yüzdeleri hesaplayın.
+> ç) M2 ile M4'ün dizideki pozisyonu yer değiştirseydi geri akış nasıl değişirdi?
+> d) Hollier yönteminin iki varsayımını (sınırını) belirtin.
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** Hollier G/A oranları → sıralama → akış sınıflandırması.
+> **Hangi yöntem:** $G_i = \sum f_{i\to}$, $A_i = \sum f_{\to i}$, $r_i = G_i/A_i$ → azalan sıra.
+> **Dikkat:** $A_i=0,\ G_i>0$ → oran $\infty$ → makine başa gider. $G_i=0$ → oran 0 → sona gider.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Her makine için çıkan ve gelen akışları topluyoruz.
+> Formül/Yöntem: $r_i = G_i / A_i$.
+> Hesap:
+>
+> | Makine | $G_i$ | $A_i$ | $r_i$ |
+> |---|:---:|:---:|:---:|
+> | M1 | 50 | 0 | **∞** |
+> | M2 | 25 | 30 | 0,833 |
+> | M3 | 25 | 20 | 1,250 |
+> | M4 | 35 | 40 | 0,875 |
+> | M5 | 0 | 45 | **0** |
+>
+> Sonuç: Oranlar yukarıdaki gibidir.
+> Neden: Yüksek oran "çıkışı baskın" makineyi, düşük oran "girişi baskın" makineyi gösterir.
+>
+> **b)**
+> Ne yapıyoruz: Oranları azalan sıraya diziyoruz.
+> Formül/Yöntem: En büyük orandan en küçüğe.
+> Hesap: ∞ > 1,25 > 0,875 > 0,833 > 0.
+> Sonuç: **M1 → M3 → M4 → M2 → M5** (pozisyonlar: M1=1, M3=2, M4=3, M2=4, M5=5).
+> Neden: Çıkış baskın makineler başa, giriş baskın makineler sona yerleşir.
+>
+> **c)**
+> Ne yapıyoruz: Her akışı kaynak/hedef pozisyonuna göre sınıflandırıyoruz.
+> Formül/Yöntem: Hedef pozisyon = kaynak+1 → ileri sıralı; +1'den büyük → atlamalı; hedef < kaynak → geri.
+> Hesap:
+>
+> | Akış | Miktar | Sınıf |
+> |---|:---:|:---:|
+> | M1→M3 | 20 | İleri sıralı |
+> | M3→M4 | 15 | İleri sıralı |
+> | M1→M2 | 30 | Atlamalı |
+> | M3→M5 | 10 | Atlamalı |
+> | M4→M5 | 35 | Atlamalı |
+> | M2→M4 | 25 | **Geri** |
+>
+> Sonuç: İleri sıralı = 35/135 = **%25,9**; Atlamalı = 75/135 = **%55,6**; Geri = 25/135 = **%18,5**.
+> Neden: Toplam akış 135; her sınıfın payı toplam üzerinden bulunur.
+>
+> **ç)**
+> Ne yapıyoruz: M2 ve M4'ü dizide yer değiştirip akışları yeniden sınıflandırıyoruz.
+> Formül/Yöntem: Yeni sıra M1 → M3 → M2 → M4 → M5 (pozisyonlar M2=3, M4=4).
+> Hesap: M2→M4 artık 3→4 (ileri); tüm diğer akışlar da ileri/atlamalı kalır, hiçbiri geri değil.
+> Sonuç: **Geri akış %0**'a düşer.
+> Neden: Tek geri akış (M2→M4) ileriye döner; Hollier sezgisel olduğundan bu örnekte oran sırası tek başına optimumu garanti etmiyor.
+>
+> **d)**
+> Ne yapıyoruz: Yöntemin varsayımlarını sıralıyoruz.
+> Formül/Yöntem: Hollier tek boyutlu (doğrusal) bir hücre dizilimi varsayar.
+> Hesap: Yöntem yalnız $G/A$ oranını kullanır, akış büyüklüğünü sıralamada hesaba katmaz.
+> Sonuç: Sınır 1 = **doğrusal/tek sıra yerleşim** varsayımı; Sınır 2 = **mesafe ve akış miktarı dikkate alınmaz**, eşitliklerde sıra keyfidir.
+> Neden: Bu varsayımlar nedeniyle Hollier minimum geri akışı her zaman garanti etmez (ç şıkkı örneği).
+
+---
+
+### S04 — Orta — Hücre Maliyet Analizi ve İstisna
+
+> [!question] Soru
+> Vestel'in beyaz eşya tesisinde endüstri mühendisi Mert Bey, altı parça ve beş tezgâhlık bir bölümde iki hücre kurdu; ancak bir parçanın iki hücreye birden uğradığını fark etti. Hücre içi akış oranını ve istisna parçayı belirleyip maliyet açısından yorumlaması gerekiyor.
+> Altı parça ve beş makineli bir fabrikada iki hücre oluşturulmuştur:
+>
+> | | M1 | M2 | M3 | M4 | M5 |
+> |---|:---:|:---:|:---:|:---:|:---:|
+> | P1 | 1 | 1 | 0 | 0 | 0 |
+> | P2 | 0 | 1 | 1 | 0 | 0 |
+> | P3 | 1 | 0 | 0 | 1 | 0 |
+> | P4 | 0 | 0 | 1 | 0 | 0 |
+> | P5 | 0 | 0 | 0 | 1 | 1 |
+> | P6 | 0 | 0 | 0 | 0 | 1 |
+>
+> Hücre 1: M1, M2, M3 | Hücre 2: M4, M5
+> Üretim miktarları: P1=100, P2=80, P3=50, P4=60, P5=120, P6=90
+>
+> a) Her parçanın hücre üyeliğini belirleyin.
+> b) İstisna parçayı tespit edip gerekçesini yazın.
+> c) Hücre içi ve hücre dışı akış yüzdelerini (üretim miktarına göre) hesaplayın.
+> ç) İstisna parça P3'ün üretim miktarı 50'den 200'e çıksaydı hücre dışı oran ne olurdu?
+> d) İstisnayı yönetmek için üç çözüm seçeneğini değerlendirin.
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** İstisna parça tespiti + hücre içi/dışı akış oranı.
+> **Hangi yöntem:** Her parçanın hangi hücre makinelerini kullandığına bak; iki hücreye değen = istisna.
+> **Dikkat:** Akış oranı üretim miktarına göre hesaplanır, parça sayısına göre değil.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Her parçanın kullandığı makinelerin hücresine bakıyoruz.
+> Formül/Yöntem: Tek hücrenin makinelerini kullanan parça o hücreye aittir.
+> Hesap:
+>
+> | Parça | Makineler | Üyelik |
+> |---|---|:---:|
+> | P1 | M1, M2 | Hücre 1 |
+> | P2 | M2, M3 | Hücre 1 |
+> | P3 | M1, M4 | **İki hücre** |
+> | P4 | M3 | Hücre 1 |
+> | P5 | M4, M5 | Hücre 2 |
+> | P6 | M5 | Hücre 2 |
+>
+> Sonuç: P1, P2, P4 → Hücre 1; P5, P6 → Hücre 2; P3 → her ikisi.
+> Neden: Üyelik, parçanın rota makinelerinin hangi hücrede olduğuna bağlıdır.
+>
+> **b)**
+> Ne yapıyoruz: İki hücreye birden değen parçayı seçiyoruz.
+> Formül/Yöntem: İstisna = farklı hücrelerin makinelerini kullanan parça.
+> Hesap: P3 → M1 (Hücre 1) + M4 (Hücre 2).
+> Sonuç: **İstisna parça = P3.**
+> Neden: P3 üretimi her iki hücreye uğradığından hücreler arası taşıma gerektirir.
+>
+> **c)**
+> Ne yapıyoruz: Üretim miktarlarını hücre içi/dışı olarak topluyoruz.
+> Formül/Yöntem: Hücre içi oran $= \frac{\text{hücre içi miktar}}{\text{toplam}}$.
+> Hesap: Toplam = 500. İstisna P3 (50) hücre dışı; geri kalan 450 hücre içi.
+> Sonuç: Hücre içi $= 450/500 = $ **%90**; hücre dışı $= 50/500 = $ **%10**.
+> Neden: Sadece istisna parça hücreler arası hareket eder, diğerleri hücre içidir.
+>
+> **ç)**
+> Ne yapıyoruz: P3 miktarını 200 alıp toplamı yeniden hesaplıyoruz.
+> Formül/Yöntem: Yeni toplam $= 500 - 50 + 200 = 650$.
+> Hesap: Hücre dışı = 200, hücre içi = 450 → dışı oran $= 200/650$.
+> Sonuç: Hücre dışı **≈ %30,8**, hücre içi ≈ %69,2.
+> Neden: İstisna parçanın hacmi arttıkça hücreler arası taşıma payı hızla yükselir.
+>
+> **d)**
+> Ne yapıyoruz: İstisnayı kaldıracak seçenekleri karşılaştırıyoruz.
+> Formül/Yöntem: Hedef → P3 rotasını tek hücreye almak.
+> Hesap: (1) P3'ü fasona ver, (2) M4 kopyasını Hücre 1'e ekle, (3) P3'ü yeniden tasarla (M4 kullanmasın).
+> Sonuç: Düşük hacimde (1) fason en ekonomik; yüksek hacimde (2) makine çoğaltma tercih edilir; uzun vadede (3) tasarım değişikliği kalıcı çözümdür.
+> Neden: Her seçeneğin maliyeti P3 hacmine bağlıdır; ç şıkkındaki gibi hacim büyürse makine çoğaltma daha cazip olur.
+
+---
+
+### S05 — Zor — Entegre (ROC + İstisna + Hollier)
+
+> [!question] Soru
+> Ford Otosan'ın motor atölyesinde kıdemli planlama mühendisi Selin Hanım, 4 tezgâh ve 6 parçalık bir hattı önce ROC ile hücrelere ayırıp ardından her hücreyi Hollier ile sıralamak istiyor. Bir parçanın iki hücreyi de kullandığından şüpheleniyor ve geri akış yüzdesini görmek istiyor.
+>
+> **Makine-parça matrisi:**
+>
+> | | P1 | P2 | P3 | P4 | P5 | P6 |
+> |---|:---:|:---:|:---:|:---:|:---:|:---:|
+> | M1 | 1 | 1 | 0 | 0 | 0 | 0 |
+> | M2 | 0 | 1 | 1 | 0 | 0 | 0 |
+> | M3 | 0 | 0 | 0 | 1 | 1 | 0 |
+> | M4 | 0 | 0 | 1 | 1 | 0 | 1 |
+>
+> **From-to akışları (hücre içi, P3 hariç):**
+>
+> | Rota | Miktar |
+> |---|:---:|
+> | M1→M2 (P1+P2) | 130 |
+> | M4→M3 (P4+P6) | 90 |
+> | M3→M4 (P5) | 40 |
+>
+> a) ROC yöntemiyle hücreleri bulun (2 iterasyon).
+> b) İstisna parçayı belirleyin.
+> c) Her hücre için Hollier sıralamasını yapın ve geri akış yüzdesini hesaplayın.
+> ç) Hücre 2'de M3 ile M4'ün dizideki pozisyonu yer değiştirseydi geri akış nasıl değişirdi?
+> d) Bu iki aşamalı yaklaşımın (önce ROC, sonra Hollier) iki pratik kısıtını belirtin.
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** ROC → hücre belirleme → her hücrede Hollier.
+> **Hangi yöntem:** Önce ROC ile blok yapı, sonra her hücre kendi from-to'suyla Hollier.
+> **Dikkat:** 2-makineli hücrede geri akış = çift yönlü akışın küçük olanı.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: ROC ile satır/sütun ağırlıklarını hesaplayıp iki iterasyonda yakınsatıyoruz.
+> Formül/Yöntem: Satır ağırlıkları (32,16,8,4,2,1) ve sütun ağırlıkları (8,4,2,1).
+> Hesap: Satır: M1=48, M2=24, M4=13, M3=6 → M1>M2>M4>M3. Sütun sıralaması: P2>P1>P3>P4>P6>P5. İterasyon 2'de sıralar değişmez → yakınsadı. Blok yapı:
+>
+> | | P2 | P1 | P3 | P4 | P6 | P5 |
+> |---|:---:|:---:|:---:|:---:|:---:|:---:|
+> | M1 | 1 | 1 | 0 | 0 | 0 | 0 |
+> | M2 | 1 | 0 | 1 | 0 | 0 | 0 |
+> | M4 | 0 | 0 | 1 | 1 | 1 | 0 |
+> | M3 | 0 | 0 | 0 | 1 | 0 | 1 |
+>
+> Sonuç: **Hücre 1 = {M1, M2}** (P1, P2); **Hücre 2 = {M3, M4}** (P4, P5, P6).
+> Neden: İki iterasyonda kararlı blok köşegen yapı oluştu.
+>
+> **b)**
+> Ne yapıyoruz: Blok dışında kalan parçayı buluyoruz.
+> Formül/Yöntem: İki hücrenin makinesini kullanan parça istisnadır.
+> Hesap: P3 → M2 (Hücre 1) + M4 (Hücre 2).
+> Sonuç: **İstisna parça = P3.**
+> Neden: P3 hücreler arası geçiş gerektirir, blok köşegene sığmaz.
+>
+> **c)**
+> Ne yapıyoruz: Her hücreyi kendi from-to verisiyle Hollier'a sokuyoruz.
+> Formül/Yöntem: $r_i = G_i/A_i$ → azalan sıra; geri akış = ters yönlü akış payı.
+> Hesap: **Hücre 1 (M1,M2):** M1→M2=130 tek yönlü → sıra M1→M2, geri akış yok. **Hücre 2 (M3,M4):** M4 ($r=2,25$) > M3 ($r=0,44$) → sıra M4→M3; M4→M3=90 ileri, M3→M4=40 geri.
+> Sonuç: Hücre 1 geri akış **%0**; Hücre 2 geri akış $= 40/130 = $ **%30,8**.
+> Neden: 2-makineli hücrede küçük yöndeki akış (40) geri akışı oluşturur.
+>
+> **ç)**
+> Ne yapıyoruz: Hücre 2'de sırayı M3→M4'e çevirip akışları yeniden sınıflandırıyoruz.
+> Formül/Yöntem: Yeni sırada M3 pozisyon 1, M4 pozisyon 2.
+> Hesap: Artık M3→M4=40 ileri, M4→M3=90 geri → geri akış $= 90/130$.
+> Sonuç: Geri akış **%69,2**'ye **yükselir** (kötüleşir).
+> Neden: Daha büyük akış (90) ters yöne döndüğünden mevcut Hollier sırası (M4→M3) bu hücrede daha iyidir.
+>
+> **d)**
+> Ne yapıyoruz: İki aşamalı yöntemin zayıf yanlarını sıralıyoruz.
+> Formül/Yöntem: ROC hücre verir ama istisnayı otomatik çözmez; Hollier yalnız doğrusal sıralar.
+> Hesap: ROC başlangıç sırasına duyarlıdır; Hollier akış büyüklüğünü ve mesafeyi göz ardı eder.
+> Sonuç: Kısıt 1 = **istisna parçaların maliyeti iki aşamada da çözülmeden kalır**; Kısıt 2 = **ardışık iki sezgisel adım küresel optimumu garanti etmez** (yerel iyileşme verir).
+> Neden: Her adım kendi alt-amacını optimize ettiğinden bütünleşik en iyi çözüm ıskalanabilir.

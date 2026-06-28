@@ -1,0 +1,360 @@
+---
+hafta: 7
+tags: [ders/tesis-planlama, sorular]
+soru_sayısı: 5
+---
+
+# HF07 — Yerleşim Tasarımı I Soruları
+
+> [!info] Nasıl kullan?
+> Soruyu gör → her şıkkı (a–d) kapalı kitap çöz → `[!answer]-` kutusunu aç → hataları not et.
+> Kapsam: Taşıma maliyeti, ikili değişim, grid mesafeleri, CRAFT alan uygunluğu, iterasyon.
+
+---
+
+### S01 — Kolay — Taşıma maliyeti hesabı
+
+> [!question] Soru
+> Beko'nun bir üretim biriminde yerleşim mühendisi Gizem Hanım, dört bölümü 2×2'lik bir gride yerleştirdi ve mevcut düzenin toplam taşıma maliyetini hesaplamak istiyor. Komşuluk kuralına göre mesafeleri okuyup akışlarla çarparak başlangıç maliyetini bulacak.
+> Yerleşim:
+> ```
+> [1][2]
+> [3][4]
+> ```
+> Simetrik akışlar: $F_{12}=30$, $F_{13}=20$, $F_{14}=0$, $F_{23}=0$, $F_{24}=40$, $F_{34}=25$. Birim maliyet $c=1$.
+> Komşuluk kuralı: yatay/dikey komşu → $d=1$, köşegen → $d=2$.
+>
+> a) Her çift için grid mesafesini (komşuluk kuralıyla) belirleyin.
+> b) Her çiftin maliyet katkısını ($F\cdot c\cdot d$) hesaplayın.
+> c) Toplam taşıma maliyeti $Z$'yi hesaplayın.
+> ç) Köşegen mesafe $d=2$ yerine $d=1$ (Chebyshev) alınsaydı $Z$ değişir miydi?
+> d) Komşuluk-tabanlı mesafe modelinin gerçek mesafeye göre bir avantajını ve bir dezavantajını yazın.
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** $Z = \sum F_{ij}\cdot c\cdot d_{ij}$ hesabı.
+> **Hangi yöntem:** Gridden her çiftin mesafesini oku, akışla çarp, topla.
+> **Dikkat:** Köşegen çiftler (1–4, 2–3) için $d=2$; sınavda bu kural değişebilir, tanımı doğrula.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Her çiftin konum ilişkisine bakıp mesafe atıyoruz.
+> Formül/Yöntem: Yatay/dikey → 1, köşegen → 2.
+> Hesap: 1–2=1, 1–3=1, 2–4=1, 3–4=1 (komşu); 1–4=2, 2–3=2 (köşegen).
+> Sonuç: Dört komşu çift $d=1$, iki köşegen çift $d=2$.
+> Neden: Grid topolojisi mesafeyi belirler; akıştan bağımsızdır.
+>
+> **b)**
+> Ne yapıyoruz: Her çift için $F\cdot c\cdot d$ alıyoruz.
+> Formül/Yöntem: Katkı = akış × birim maliyet × mesafe.
+> Hesap:
+>
+> | Çift | $F$ | $d$ | Katkı |
+> |:---:|:---:|:---:|:---:|
+> | 1–2 | 30 | 1 | 30 |
+> | 1–3 | 20 | 1 | 20 |
+> | 1–4 | 0 | 2 | 0 |
+> | 2–3 | 0 | 2 | 0 |
+> | 2–4 | 40 | 1 | 40 |
+> | 3–4 | 25 | 1 | 25 |
+>
+> Sonuç: Katkılar 30, 20, 0, 0, 40, 25.
+> Neden: Sıfır akışlı çiftler maliyete katkı vermez.
+>
+> **c)**
+> Ne yapıyoruz: Katkıları topluyoruz.
+> Formül/Yöntem: $Z = \sum F_{ij}\cdot c\cdot d_{ij}$.
+> Hesap: $30+20+0+0+40+25$.
+> Sonuç: $Z = $ **115 TL/dönem**.
+> Neden: Başlangıç yerleşiminin toplam taşıma yükü budur.
+>
+> **ç)**
+> Ne yapıyoruz: Köşegen mesafeyi 1 yapıp etkiyi inceliyoruz.
+> Formül/Yöntem: Sadece köşegen çiftler (1–4, 2–3) etkilenir.
+> Hesap: Bu çiftlerin akışı $F_{14}=F_{23}=0$ → katkıları zaten 0.
+> Sonuç: $Z$ **değişmez**, yine 115 TL.
+> Neden: Etkilenen iki çiftin akışı sıfır olduğundan mesafe tanımı sonucu hiç etkilemez.
+>
+> **d)**
+> Ne yapıyoruz: Modeli gerçek mesafeyle karşılaştırıyoruz.
+> Formül/Yöntem: Komşuluk modeli mesafeyi 1/2 gibi tamsayılara indirger.
+> Hesap: Hesabı basitleştirir ama gerçek metre farklarını yok sayar.
+> Sonuç: Avantaj = **basit ve hızlı** (elle çözülebilir); Dezavantaj = **gerçek fiziksel mesafeleri ve bölüm boyutlarını göz ardı eder**.
+> Neden: Eşit ızgara varsayımı, farklı alanlı bölümlerde yanıltıcı maliyet verir.
+
+---
+
+### S02 — Kolay — İkili değişim testi
+
+> [!question] Soru
+> Aynı tesiste (S01) Gizem Hanım, bölüm 2 ile 3'ü yer değiştirmenin maliyeti düşürüp düşürmeyeceğini merak ediyor. Takas sonrası yeni toplam maliyeti hesaplayıp değişimin yapılıp yapılmaması gerektiğine karar verecek.
+> Yeni yerleşim:
+> ```
+> [1][3]
+> [2][4]
+> ```
+> a) Takas sonrası bölüm-konum eşlemesini yazın.
+> b) Yeni mesafeleri belirleyin.
+> c) Yeni toplam maliyet $Z_{yeni}$'yi hesaplayın.
+> ç) $\Delta Z$'yi hesaplayıp takasın yapılıp yapılmamasına karar verin.
+> d) "Akış matrisi konuma, mesafe matrisi bölüme aittir" ifadesi neden yanlış? Doğrusunu yazın.
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** Takas sonrası $Z_{yeni}$ ve $\Delta Z$.
+> **Hangi yöntem:** Yeni gridde mesafeleri yeniden oku; konumlar sabit, bölüm isimleri yer değiştirir.
+> **Dikkat:** Akış BÖLÜME, mesafe KONUMA aittir. Takasla bölümler taşınır, konumlar değil.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Yeni atamayı yazıyoruz.
+> Formül/Yöntem: 2 ve 3 yer değiştirir, 1 ve 4 sabit.
+> Hesap: 1→(1,1), 3→(1,2), 2→(2,1), 4→(2,2).
+> Sonuç: Bölüm 3 üst-sağa, bölüm 2 alt-sola taşındı.
+> Neden: İkili değişim sadece iki bölümün konumunu takas eder.
+>
+> **b)**
+> Ne yapıyoruz: Çiftleri yeni konumlara göre okuyoruz.
+> Formül/Yöntem: Komşu → 1, köşegen → 2.
+> Hesap: 1–2 (dikey)=1, 1–3 (yatay)=1, 1–4 (köşegen)=2, 2–3 (köşegen)=2, 2–4 (yatay)=1, 3–4 (dikey)=1.
+> Sonuç: Komşuluk yapısı simetrik olduğundan mesafe deseni aynı kalır.
+> Neden: 2×2 grid simetriktir; komşu sayısı değişmez.
+>
+> **c)**
+> Ne yapıyoruz: Yeni mesafelerle maliyeti topluyoruz.
+> Formül/Yöntem: $Z_{yeni} = \sum F_{ij}\cdot d_{yeni}$.
+> Hesap: 1–2: 30·1, 1–3: 20·1, 2–4: 40·1, 3–4: 25·1; sıfır akışlı çiftler 0.
+> Sonuç: $Z_{yeni} = 30+20+40+25 = $ **115 TL**.
+> Neden: Akışlı çiftlerin tümü yine komşu konumda kaldı.
+>
+> **ç)**
+> Ne yapıyoruz: Fark alıyoruz.
+> Formül/Yöntem: $\Delta Z = Z_{yeni} - Z_{eski}$.
+> Hesap: $115 - 115 = 0$.
+> Sonuç: $\Delta Z = 0$ → takas **nötr**, yapılmasına gerek yok.
+> Neden: Akışlı bölümler her iki düzende de komşu; maliyet değişmez, mevcut düzeni bozma.
+>
+> **d)**
+> Ne yapıyoruz: İfadeyi düzeltiyoruz.
+> Formül/Yöntem: Doğru eşleme → akış: bölüm, mesafe: konum.
+> Hesap: İfade iki matrisi ters tanımlamış.
+> Sonuç: **Yanlıştır.** Doğrusu: **akış matrisi BÖLÜMLERE, mesafe matrisi KONUMLARA aittir.**
+> Neden: Takasta bölümler taşınır; mesafe konumlar arası sabittir, bu yüzden ayrımı korumak şart.
+
+---
+
+### S03 — Orta — 3×2 grid ikili değişim analizi
+
+> [!question] Soru
+> Şişecam'ın bir cam işleme atölyesinde planlama uzmanı Tolga Bey, beş bölümü 3×2'lik bir gride (bir hücre boş) yerleştirdi. Başlangıç maliyetini hesaplayıp ikili değişimleri test ederek en çok tasarruf sağlayan takası bulması gerekiyor.
+> Yerleşim (hücre 5m×5m, rektlineer):
+> ```
+> [A][B][C]
+> [D][E][ ]
+> ```
+> Simetrik akış matrisi:
+>
+> | | A | B | C | D | E |
+> |-|---|---|---|---|---|
+> | A | - | 20 | 5 | 15 | 50 |
+> | B | 20 | - | 10 | 40 | 8 |
+> | C | 5 | 10 | - | 3 | 12 |
+> | D | 15 | 40 | 3 | - | 30 |
+> | E | 50 | 8 | 12 | 30 | - |
+>
+> Birim maliyet $c=2$ TL/birim·m.
+>
+> a) Konum koordinatlarını ve çiftler arası mesafe tablosunu oluşturun.
+> b) Başlangıç maliyeti $Z_0$'ı hesaplayın.
+> c) A↔D takasını test edip $\Delta Z$ ve yeni maliyeti bulun.
+> ç) B↔D takası test edilseydi sonuç ne olurdu; A↔D'den daha mı iyi?
+> d) Büyük akışlı uzak çiftleri önce test etmenin neden doğru sezgi olduğunu açıklayın.
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** Başlangıç $Z$, kritik takasların $\Delta Z$'si, en iyi değişim.
+> **Hangi yöntem:** $Z = \sum F_{ij}\cdot c\cdot d_{ij}$; her takasta konum haritasını güncelle.
+> **Dikkat:** Boş hücre bölüm değildir; takas yalnız mevcut bölümler arasında yapılır.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Konumları koordinatlandırıp Manhattan mesafelerini buluyoruz.
+> Formül/Yöntem: $d_{ij} = |x_i-x_j| + |y_i-y_j|$.
+> Hesap: A(0,0), B(0,5), C(0,10), D(5,0), E(5,5). Mesafeler (m):
+>
+> | Çift | $d$ | Çift | $d$ |
+> |:---:|:---:|:---:|:---:|
+> | A–B | 5 | B–E | 5 |
+> | A–C | 10 | C–D | 15 |
+> | A–D | 5 | C–E | 10 |
+> | A–E | 10 | D–E | 5 |
+> | B–C | 5 | B–D | 10 |
+>
+> Sonuç: Mesafe tablosu yukarıdadır.
+> Neden: Rektlineer mesafe, satır+sütun fark mesafelerinin toplamıdır.
+>
+> **b)**
+> Ne yapıyoruz: $F\cdot d$ toplamını alıp $c$ ile çarpıyoruz.
+> Formül/Yöntem: $Z_0 = c\sum F_{ij}d_{ij}$.
+> Hesap: $\sum F\cdot d = 100+50+75+500+50+400+40+45+120+150 = 1530$; $Z_0 = 2\times1530$.
+> Sonuç: $Z_0 = $ **3.060 TL**.
+> Neden: En büyük katkılar A–E (500) ve B–D (400); bunlar yüksek akış × büyük mesafedir.
+>
+> **c)**
+> Ne yapıyoruz: A ve D konumlarını takas edip değişen çiftleri yeniden hesaplıyoruz.
+> Formül/Yöntem: Sadece A veya D içeren çiftler değişir.
+> Hesap:
+>
+> | Çift | $F$ | Eski $d$ | Yeni $d$ | $\Delta(F\cdot d)$ |
+> |:---:|:---:|:---:|:---:|:---:|
+> | A–B | 20 | 5 | 10 | +100 |
+> | A–E | 50 | 10 | 5 | −250 |
+> | B–D | 40 | 10 | 5 | −200 |
+> | C–D | 3 | 15 | 10 | −15 |
+> | D–E | 30 | 5 | 10 | +150 |
+>
+> $\Delta(\sum Fd) = +100-250-200-15+150 = -215$.
+> Sonuç: $\Delta Z = 2\times(-215) = -430$ → $Z_{A\leftrightarrow D} = $ **2.630 TL** (tasarruf 430 TL, %14,1).
+> Neden: A–E ve B–D yüksek akışları kısaldığından kazanç, A–B ve D–E kayıplarını aşar.
+>
+> **ç)**
+> Ne yapıyoruz: B↔D takasını test ediyoruz.
+> Formül/Yöntem: B ve D konumlarını değiştir, etkilenen çiftleri topla.
+> Hesap: B–C +50, B–E +40, A–D +75, C–D −15 → $\Delta(\sum Fd)=+150$; $\Delta Z = +300$.
+> Sonuç: $Z_{B\leftrightarrow D} = 3.360$ TL → **kötüleşir**; A↔D çok daha iyidir.
+> Neden: B–D mesafesi takasla değişmez (her ikisi de taşındı), ama komşuluklar bozulup maliyet artar.
+>
+> **d)**
+> Ne yapıyoruz: Sezgiyi gerekçelendiriyoruz.
+> Formül/Yöntem: Maliyet katkısı = akış × mesafe; en büyük katkı en büyük iyileşme potansiyeli.
+> Hesap: A–E (akış 50, mesafe 10) gibi çiftleri komşu yapmak en çok tasarruf sağlar.
+> Sonuç: Büyük akışlı **uzak** çiftleri yakınlaştırmak en yüksek $\Delta Z$ azalmasını verir; bu yüzden önce test edilir.
+> Neden: Sınavda 10 takası tek tek denemek yerine bu sezgi en iyi adayı hızla bulur.
+
+---
+
+### S04 — Orta — Büyük/küçük bölüm değişimi (kavramsal)
+
+> [!question] Soru
+> CRAFT yazılımıyla çalışan yerleşim danışmanı Pelin Hanım, farklı alanlı bölümler içeren bir tesiste ikili değişim yaparken alan uygunluğu sorunlarıyla karşılaşıyor. Eşit olmayan alanlı bölümlerin hangi koşulda takas edilebileceğini ve maliyetin nasıl doğrulanacağını netleştirmek istiyor.
+> 6 bölümlü yerleşimde D ve E bölümleri 2 hücre, A-B-C-F bölümleri 1 hücre kaplar.
+>
+> a) Büyük bölüm (D, 2 hücre) ile küçük bölüm (A, 1 hücre) hangi koşulda takas edilebilir?
+> b) İki büyük bölüm (D ve E) takas edilirse ağırlık merkezleri nasıl güncellenir?
+> c) Eşit olmayan alanlı takasların neden "tahmini" değil "gerçek" maliyet hesabı gerektirdiğini açıklayın.
+> ç) D ve A komşu değilse (ortak sınırları yoksa) takas mümkün müdür? Neden?
+> d) CRAFT'ın "tahminle aday seç, gerçek geometriyle doğrula" ilkesini özetleyin.
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** CRAFT ve ikili değişimde alan uygunluğu koşulları.
+> **Hangi yöntem:** Kavramsal — CRAFT'ın "eşit alan veya ortak sınır" kuralını uygula.
+> **Dikkat:** Eşit olmayan alanlı takas geometriyi değiştirir; merkez yeniden hesaplanmalı.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Alan eşitsizliğinde takas koşulunu belirliyoruz.
+> Formül/Yöntem: CRAFT → "eşit alanlı **veya** ortak sınırlı" bölümler takas adayıdır.
+> Hesap: D (2 hücre) ile A (1 hücre) alanları eşit değil; ancak komşu (ortak sınırlı) iseler aday olabilirler.
+> Sonuç: Takas **ancak komşu olup yeniden şekillendirme ile bağlantılılık korunursa** mümkündür; doğrudan yer değiştiremezler.
+> Neden: D iki hücreyi tek hücreye sığdıramaz; alan farkı geometrik düzenleme gerektirir.
+>
+> **b)**
+> Ne yapıyoruz: Eşit alanlı iki büyük bölümün merkezini takas ediyoruz.
+> Formül/Yöntem: Eşit alanda merkezler geçici olarak karşılıklı değiş-tokuş edilir.
+> Hesap: D merkezi $(1; 0{,}5)$, E merkezi $(2; 0{,}5)$ → tahmin: D ↔ E merkez yerleri değişir.
+> Sonuç: Tahminde merkezler basitçe takas edilir; **gerçek geometri kurulunca** yeni şekle göre merkez yeniden hesaplanır.
+> Neden: Eşit alan olsa da fiziksel yerleşim L/T şekli üretebilir, merkez kayar.
+>
+> **c)**
+> Ne yapıyoruz: Tahmini ve gerçek maliyeti ayırıyoruz.
+> Formül/Yöntem: Eşit olmayan alanda takas bölüm geometrisini değiştirir.
+> Hesap: Yalnız merkez koordinatını takas etmek (tahmin) yanlış merkez verir.
+> Sonuç: Bu yüzden eşit olmayan alanlı takas **gerçek** geometriyle yeniden hesaplanmalıdır.
+> Neden: Alan ağırlıklı gerçek merkez, tahmin merkezinden belirgin sapabilir.
+>
+> **ç)**
+> Ne yapıyoruz: Ortak sınır koşulunu test ediyoruz.
+> Formül/Yöntem: Takas için eşit alan veya ortak sınır gerekir.
+> Hesap: D ve A ne eşit alanlı ne komşuysa hiçbir koşul sağlanmaz.
+> Sonuç: Takas **mümkün değildir**.
+> Neden: Bağlantısız, eşitsiz alanlı bölümler yer değiştirince bölünmüş/geçersiz şekiller doğar.
+>
+> **d)**
+> Ne yapıyoruz: CRAFT ilkesini özetliyoruz.
+> Formül/Yöntem: Önce merkez tahminiyle aday takasları ucuzca değerlendir, sonra doğrula.
+> Hesap: Tahmin = hızlı tarama; gerçek geometri = kesin maliyet.
+> Sonuç: **Tahminle en umutlu adayı seç → gerçek geometriyle merkez ve maliyeti doğrula → öyle uygula.**
+> Neden: Tüm adayları gerçek geometriyle hesaplamak pahalı; tahmin elemeyi hızlandırır.
+
+---
+
+### S05 — Zor — Tam ikili değişim, iki iterasyon
+
+> [!question] Soru
+> TOFAŞ'ın bir alt montaj atölyesinde endüstri mühendisi Ece Hanım, altı bölümü 2×3 gridde yerleştirdi ve ikili değişim yöntemiyle iyileştirme yapmak istiyor. Başlangıç maliyetini hesaplayıp çiftleri test ederek yerleşimin yerel optimum olup olmadığını anlamaya çalışacak.
+> Başlangıç:
+> ```
+> [1][2][3]
+> [4][5][6]
+> ```
+> Hücre birimi 1 (mesafeler konum farkı). Simetrik akış matrisi:
+>
+> | | 1 | 2 | 3 | 4 | 5 | 6 |
+> |-|---|---|---|---|---|---|
+> | 1 | - | 10 | 5 | 30 | 8 | 2 |
+> | 2 | 10 | - | 20 | 6 | 40 | 4 |
+> | 3 | 5 | 20 | - | 3 | 15 | 25 |
+> | 4 | 30 | 6 | 3 | - | 12 | 8 |
+> | 5 | 8 | 40 | 15 | 12 | - | 35 |
+> | 6 | 2 | 4 | 25 | 8 | 35 | - |
+>
+> $c=1$.
+>
+> a) Konum mesafe matrisini oluşturun.
+> b) Başlangıç maliyeti $Z_0$'ı hesaplayın.
+> c) 1↔5 ve 3↔4 takaslarını test edip $\Delta Z$'lerini bulun.
+> ç) Büyük akışlı çiftler (2–5, 5–6, 1–4, 3–6) zaten komşuysa bu yerleşim hakkında ne söylenir?
+> d) Yerel optimum testini açıklayın: 15 takasın tümü nasıl yorumlanır, küresel optimum garanti edilir mi?
+
+> [!info] Sezgi & Strateji
+> **Ne soruluyor:** İki ikili değişim iterasyonu ve yerel optimum yorumu.
+> **Hangi yöntem:** $Z = \sum_{i<j} F_{ij}d_{ij}$; her takasta konumlar güncellenir.
+> **Dikkat:** 2×3 gridde rektlineer mesafe: yan komşu 1, üst/alt 1, çapraz 2, uçtan uca 3.
+
+> [!answer]- Adım adım çözüm
+> **a)**
+> Ne yapıyoruz: Konumları (satır,sütun) verip mesafeleri çıkarıyoruz.
+> Formül/Yöntem: $d = |\Delta\text{satır}| + |\Delta\text{sütun}|$.
+> Hesap: 1=(0,0), 2=(0,1), 3=(0,2), 4=(1,0), 5=(1,1), 6=(1,2). Örnek: 1–2=1, 1–3=2, 1–4=1, 1–5=2, 1–6=3, 2–5=1, 3–6=1, 5–6=1, 3–4=3.
+> Sonuç: Komşular 1, çaprazlar 2, karşı köşeler 3 mesafelidir.
+> Neden: Manhattan mesafesi grid konumlarından doğrudan okunur.
+>
+> **b)**
+> Ne yapıyoruz: $F\cdot d$ toplamını alıyoruz.
+> Formül/Yöntem: $Z_0 = \sum_{i<j} F_{ij}d_{ij}$.
+> Hesap: $10+10+30+16+6+20+12+40+8+9+30+25+12+16+35$.
+> Sonuç: $Z_0 = $ **279**.
+> Neden: 15 çiftin tüm katkıları toplanır.
+>
+> **c)**
+> Ne yapıyoruz: İki adayı test edip değişen çiftleri topluyoruz.
+> Formül/Yöntem: Sadece takas edilen bölümleri içeren çiftler değişir.
+> Hesap: **1↔5:** 5–6 (1→3) +70, 1–6 (3→1) −4 → $\Delta Z = +66$. **3↔4:** 1–4 (1→2) +30, 3–6 (1→2) +25, 2–3 (1→2) +20, 3–5 (2→1) −15, 1–3 (2→1) −5, 2–4 (2→1) −6, 4–6 (2→1) −8, 4–5 (1→2) +12 → $\Delta Z = +53$.
+> Sonuç: 1↔5 → **+66** (kötü); 3↔4 → **+53** (kötü). İkisi de iyileştirmiyor.
+> Neden: Her iki takas, hâlihazırda komşu olan büyük akışları uzaklaştırıyor.
+>
+> **ç)**
+> Ne yapıyoruz: Büyük akışların konumlarına bakıyoruz.
+> Formül/Yöntem: Büyük akış × küçük mesafe → düşük katkı, iyileştirme zor.
+> Hesap: 2–5=40, 5–6=35, 1–4=30, 3–6=25 → hepsi $d=1$ (komşu).
+> Sonuç: Yerleşim **yerel optimuma çok yakın**; takaslar bu komşulukları bozarak maliyeti artırır.
+> Neden: En ağır yükler zaten en kısa mesafede; kazanç alanı kalmamıştır.
+>
+> **d)**
+> Ne yapıyoruz: Yerel optimum kriterini tanımlıyoruz.
+> Formül/Yöntem: Tüm $C(6,2)=15$ takasta $\Delta Z \geq 0$ ise yerel optimumdur.
+> Hesap: Hiçbir ikili değişim iyileştirmiyorsa mevcut çözüm bir yerel minimumdur.
+> Sonuç: 15 takasın tümü $\Delta Z\geq0$ → **yerel optimum**; ancak **küresel optimum garanti edilmez**.
+> Neden: İkili değişim açgözlü bir yöntemdir; farklı başlangıç yerleşimleri daha iyi çözüm verebilir.
+
+---
+
+> [!warning] Sınav tuzağı
+> İkili değişimde akış matrisi **bölümlere**, mesafe matrisi **konumlara** aittir. Takasta yalnız "hangi bölüm hangi konumda" değişir; mesafe matrisi sabit kalır.
